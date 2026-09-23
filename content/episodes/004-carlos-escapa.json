@@ -1,0 +1,27 @@
+{
+  "schema": "episode/1",
+  "slug": "004-carlos-escapa",
+  "number": 4,
+  "season": 1,
+  "sync": {
+    "title": "The Big Tech AI Blueprint",
+    "rawTitle": "#4 - Carlos Escapa: The Big Tech AI Blueprint | Leading in AI Podcast",
+    "publishedAt": "2026-06-03",
+    "youtubeId": "t9zrVOMhVII",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Carlos Escapa spent over a decade in leadership roles at Amazon Web Services and Meta, building AI ecosystems and industrial alliances. He is co-author of \"The AI-Driven Business\" and a lecturer at ESADE, UC Berkeley-Haas, and Instituto de Empresa, and currently serves as Executive in Residence at Across Legal. Based between San Francisco and Barcelona, Carlos has trained over 4000 executives on AI strategy and is deeply committed to making AI adoption practical and grounded. In this episode, we discuss his journey from infrastructure and big data to AI, the key lessons he learned at AWS and Meta, and what European companies need to do to stay competitive in the AI era.\n\nTopics covered:\n- From infrastructure to AI: how serendipity and timing shaped Carlos's career at AWS and Meta\n- What PyTorch and the open source movement taught him about collaboration and explosive growth\n- Amazon's methodology for innovation and why anyone can learn to innovate with the right process\n- Why following contrasting AI voices like Gary Marcus and Yann LeCun makes you a better thinker\n- The biggest mistakes companies make when adopting AI and how to avoid them\n- Why your corporate data is your competitive moat and AI cannot fix bad data\n- Where Europe stands in the AI race and why AI sovereignty is becoming a strategic priority\n- How AI will surprise us most when it becomes completely invisible in everyday life\n\nConnect with Carlos Escapa: https://www.linkedin.com/in/carlosescapa/\n\nAbout Leading in AI:\nAgentic Edge: https://agenticedge.eu/\nAgentic Edge - LinkedIn: https://www.linkedin.com/company/agenticedge-eu/\nLeading in AI - LinkedIn: https://www.linkedin.com/showcase/leading-in-ai/\nInstagram: https://www.instagram.com/leadinginai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/t9zrVOMhVII/maxresdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "guests": ["carlos-escapa"],
+    "topics": ["ai-strategy", "enterprise-transformation", "public-policy"],
+    "summary": "Carlos Escapa spent more than a decade in leadership roles at Amazon Web Services and Meta, building AI ecosystems and industrial alliances. He is co-author of The AI-Driven Business, a lecturer at ESADE, UC Berkeley-Haas and Instituto de Empresa, Executive in Residence at Across Legal, and has trained over four thousand executives on AI strategy. Based between San Francisco and Barcelona, he shares what PyTorch and the open-source movement taught him about collaboration, Amazon's methodology for innovation, the biggest mistakes companies make when adopting AI, why corporate data is the real competitive moat, and where Europe stands in the AI race as sovereignty becomes a strategic priority.",
+    "hook": "Lessons from AWS and Meta on what European companies must do to stay competitive.",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}

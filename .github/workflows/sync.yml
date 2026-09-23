@@ -1,0 +1,36 @@
+# Weekly content sync: pulls new episodes/clips from YouTube and opens a PR.
+# Needs a repository secret YOUTUBE_API_KEY (falls back to the RSS feed without it).
+name: Sync podcast content
+
+on:
+  schedule:
+    - cron: "0 7 * * 1,4" # Mondays and Thursdays, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Sync content
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: npm run sync | tee sync-report.txt
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "content: sync from YouTube"
+          title: "Content sync: new episodes/clips"
+          body-path: sync-report.txt
+          branch: content/sync
+          delete-branch: true
+          labels: content

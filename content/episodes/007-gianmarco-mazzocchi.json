@@ -1,0 +1,27 @@
+{
+  "schema": "episode/1",
+  "slug": "007-gianmarco-mazzocchi",
+  "number": 7,
+  "season": 1,
+  "sync": {
+    "title": "Shaping Public Policy with AI Economics",
+    "rawTitle": "#7 - Gianmarco Mazzocchi: Shaping Public Policy with AI Economics | Leading in AI Podcast",
+    "publishedAt": "2026-07-09",
+    "youtubeId": "JqKSe0dvNVo",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Gianmarco Mazzocchi is a global leader in AI economics and policy strategy. With an extensive background spanning investment banking in Frankfurt and consulting across the Middle East, Gianmarco built the AI Economics Unit at Whiteshield from the ground up. He leads a team leveraging cutting-edge machine learning and unconventional data to advise world governments on macroeconomic strategy and public policy, and recently launched the Global Labour Resilience Index at the World Economic Forum in Davos.\n\nIn this episode, Gianmarco shares what it really takes to establish a brand-new AI function inside a global firm, how slow-moving governments are deploying machine learning, and where the debate on LLM scaling limitations stands today.\n\nTopics covered:\n- The journey: From investment banking and consulting to leading AI Economics\n- Building from scratch: Establishing an AI function inside a global consulting firm\n- Defining AI Economics and its practical application on the global stage\n- Deploying AI in government: Constraints and challenges vs. the private sector\n- Satellite imagery and exotic data: Using unconventional sources for policy insights\n- AI at Davos: The core message behind the Global Labour Resilience Index\n- Responsible AI: Navigating bias, opacity, and transparency in public policy\n- The LLM ceiling debate: Are we hitting a wall on the path to AGI?\n\nConnect with Gianmarco Mazzocchi: https://es.linkedin.com/in/gianmarco-mazzocchi\n\nAbout Leading in AI:\nAgentic Edge: https://agenticedge.eu/\nAgentic Edge - LinkedIn: https://www.linkedin.com/company/agenticedge-eu\nLeading in AI - LinkedIn: https://www.linkedin.com/company/leading-in-ai\nInstagram: https://www.instagram.com/leadinginai",
+    "thumbnailUrl": "https://i.ytimg.com/vi/JqKSe0dvNVo/maxresdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "guests": ["gianmarco-mazzocchi"],
+    "topics": ["public-policy", "governance", "ai-strategy"],
+    "summary": "Gianmarco Mazzocchi leads the AI Economics Unit at Whiteshield, which he built from the ground up after a career spanning investment banking in Frankfurt and consulting across the Middle East. His team uses machine learning and unconventional data, from satellite imagery to exotic datasets, to advise governments on macroeconomic strategy and public policy, and recently launched the Global Labour Resilience Index at the World Economic Forum in Davos. He explains what it takes to establish a new AI function inside a global firm, how slow-moving governments actually deploy machine learning, how to navigate bias and transparency in public policy, and where the debate on LLM scaling limits stands.",
+    "hook": "Machine learning and satellite data in the service of governments.",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "guest/1",
+  "slug": "vuk-vegezzi",
+  "name": "Vuk Vegezzi",
+  "role": "Partner",
+  "company": "Visium",
+  "companyUrl": "https://visium.ch",
+  "industry": "AI Consulting",
+  "location": "Switzerland",
+  "bio": "Vuk Vegezzi is a Partner at Visium, a Swiss AI and data company that helps organisations in regulated industries such as life sciences and chemicals unlock transformative impact through AI. He began his career evaluating startups for investment at BB4 before joining Visium in 2022, where he built the firm's consulting practice from scratch to more than twenty clients and five long-term partnerships in two years.",
+  "headshot": null,
+  "links": {
+    "linkedin": "https://ch.linkedin.com/in/vuk-vegezzi-114880104",
+    "x": null,
+    "website": null
+  }
+}

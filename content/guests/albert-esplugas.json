@@ -1,0 +1,17 @@
+{
+  "schema": "guest/1",
+  "slug": "albert-esplugas",
+  "name": "Albert Esplugas",
+  "role": "CEO",
+  "company": "Futuria Strategy",
+  "companyUrl": null,
+  "industry": "Strategy Consulting",
+  "location": null,
+  "bio": "Albert Esplugas is CEO of Futuria Strategy. He has over thirty years of experience in technology, innovation and digital transformation, twelve of which he spent at Microsoft and Amazon headquarters in Seattle. A former professor at ESADE, he recently published a book on AI written in collaboration with AI itself, and has lived through five technology waves: PC, internet, mobile, cloud and now AI.",
+  "headshot": null,
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/albertesplugas/",
+    "x": null,
+    "website": null
+  }
+}

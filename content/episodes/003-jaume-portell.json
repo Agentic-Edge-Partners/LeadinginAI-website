@@ -1,0 +1,32 @@
+{
+  "schema": "episode/1",
+  "slug": "003-jaume-portell",
+  "number": 3,
+  "season": 1,
+  "sync": {
+    "title": "How AI Agents are Reshaping E-Commerce",
+    "rawTitle": "#3 - Jaume Portell: How AI Agents are Reshaping E-Commerce | Leading in AI Podcast",
+    "publishedAt": "2026-05-27",
+    "youtubeId": "A1CKOvEykEU",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Jaume Portell is Founder and CEO of PageMind.ai. He has over 16 years of experience as CEO and Co-Founder at Beabloo, and has held CTO roles at Exoticca and eDreams. With a background in computer science from UPC and an MBA from ESADE, Jaume has been building technology products that make digital experiences more intuitive and human for nearly three decades. PageMind is revolutionizing how e-commerce companies connect with customers by bridging the gap between technical product language and customer needs, using AI to automatically research, understand, and answer the questions customers are actually asking. In this episode, we discuss how AI is transforming content creation, why this is an incredible time for builders, and how a two-person team can manage over a million lines of code with AI agents.\n\nTopics covered:\n- From system administrator to founder: Jaume's journey through eDreams, Beabloo, and Exoticca\n- Why products don't speak the language of customers and how PageMind solves this with AI\n- Building with 30+ specialized agents: catalog analysis, demand research, and content generation\n- How a two-person team built over 1 million lines of code with Claude Code\n- Using AI for everything: from software development to invoice reconciliation\n- The Notebook LM trick: creating podcasts that criticize your own ideas while running\n\nConnect with Jaume Portell: https://www.linkedin.com/in/jaumeportell/\n\nAbout Leading in AI:\nAgentic Edge: https://agenticedge.eu/\nAgentic Edge - LinkedIn: https://www.linkedin.com/company/agenticedge-eu/\nLeading in AI: https://www.linkedin.com/showcase/leading-in-ai/\nInstagram: https://www.instagram.com/leadinginai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/A1CKOvEykEU/maxresdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "guests": ["jaume-portell"],
+    "topics": ["agents", "ecommerce"],
+    "summary": "Jaume Portell is Founder and CEO of PageMind.ai. He spent sixteen years as CEO and co-founder of Beabloo and held CTO roles at Exoticca and eDreams, with a computer science background from UPC and an MBA from ESADE. PageMind uses AI to bridge the gap between technical product language and what customers are actually asking, automatically researching and answering their questions for e-commerce companies. He explains how a system of more than thirty specialised agents handles catalogue analysis, demand research and content generation, how a two-person team built over a million lines of code with Claude Code, and why this is an incredible time for builders.",
+    "hook": "Thirty specialised agents, two people, a million lines of code.",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": [
+      {
+        "label": "PageMind",
+        "url": "https://pagemind.ai"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "ai-strategy",
+    "name": "AI Strategy",
+    "description": "How leaders connect AI to business strategy: where to start, what to prioritise, and how to move from scattered experiments to a coherent plan with real returns."
+  },
+  {
+    "slug": "governance",
+    "name": "Governance & Responsible AI",
+    "description": "Regulation, risk and accountability. The policies, tooling and training that let organisations adopt AI without losing control of it."
+  },
+  {
+    "slug": "agents",
+    "name": "AI Agents",
+    "description": "Systems of specialised agents that research, build and act. What they are good at today, how teams are architecting them, and what changes when software starts doing the work."
+  },
+  {
+    "slug": "enterprise-transformation",
+    "name": "Enterprise Transformation",
+    "description": "Field notes from deploying AI inside large organisations: scoping, scaling from proof-of-concept to production, and the people and data maturity that decides what succeeds."
+  },
+  {
+    "slug": "public-policy",
+    "name": "Public Policy & Economics",
+    "description": "AI in government and the wider economy. Machine learning for macroeconomic strategy, labour resilience, sovereignty and the European position in the AI race."
+  },
+  {
+    "slug": "healthcare-pharma",
+    "name": "Healthcare & Pharma",
+    "description": "AI in regulated, life-critical industries, where roadmaps span global markets and the gap between hype and genuine clinical or commercial value is widest."
+  },
+  {
+    "slug": "ecommerce",
+    "name": "E-Commerce",
+    "description": "AI reshaping how online businesses understand customers, create content and close the gap between product language and what buyers are actually asking."
+  },
+  {
+    "slug": "human-centred-ai",
+    "name": "Human-Centred AI",
+    "description": "Leadership, talent and the skills AI cannot replace. Keeping people at the centre of decisions as organisations become AI-augmented."
+  }
+]

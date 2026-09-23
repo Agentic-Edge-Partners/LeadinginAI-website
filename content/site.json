@@ -1,0 +1,41 @@
+{
+  "name": "Leading in AI",
+  "shortName": "Leading in AI Podcast",
+  "tagline": "Conversations with the people leading in the age of AI.",
+  "description": "Executives, founders and thought-leaders discuss their work, share their perspectives, and explore where AI is going. A weekly interview podcast, in English, with a strongly European guest base.",
+  "url": "https://leadinginaipodcast.com",
+  "language": "en",
+  "host": {
+    "name": "Pedro Resende",
+    "bio": "",
+    "photo": null,
+    "linkedin": null
+  },
+  "listen": {
+    "youtube": "https://www.youtube.com/@LeadinginAIPodcast",
+    "spotify": "https://open.spotify.com/show/2GXKeSmtIpy8WQhZmVaMLC",
+    "apple": null,
+    "rss": null
+  },
+  "youtubeChannelId": "UCsfIEG1ZMrXGP2cLvxRUxWQ",
+  "spotifyShowId": "2GXKeSmtIpy8WQhZmVaMLC",
+  "social": {
+    "linkedin": "https://www.linkedin.com/showcase/leading-in-ai/",
+    "instagram": "https://www.instagram.com/leadinginai/",
+    "x": null
+  },
+  "contact": "hello@leadinginaipodcast.com",
+  "newsletter": {
+    "provider": "beehiiv",
+    "headline": "New episodes, straight to your inbox.",
+    "subheadline": "One email per episode. Who the guest is, what they said, and the moments worth your time. No spam, unsubscribe anytime.",
+    "buttonLabel": "Subscribe",
+    "successMessage": "You're in. Check your inbox to confirm.",
+    "alreadySubscribedMessage": "You're already subscribed. Thank you!"
+  },
+  "about": {
+    "intro": "Leading in AI is a weekly interview podcast featuring conversations with professionals, founders and academics who are building, deploying and thinking critically about AI in their organisations.",
+    "audience": "It is made for executives, operators and builders who need a grounded view of AI from people doing the work, not a hype cycle. Every episode is a long-form conversation about what actually happened: the decisions, the trade-offs and what they would do differently.",
+    "format": "Episodes are recorded in English and run around an hour. Most guests are based in Europe, with a strong Barcelona and wider Spanish community, and the show is published wherever you listen, starting with YouTube and Spotify."
+  }
+}

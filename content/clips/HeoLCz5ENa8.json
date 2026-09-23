@@ -1,0 +1,17 @@
+{
+  "schema": "clip/1",
+  "youtubeId": "HeoLCz5ENa8",
+  "sync": {
+    "title": "AI: The Next Big Wave",
+    "rawTitle": "AI: The Next Big Wave",
+    "publishedAt": "2026-05-21",
+    "durationSeconds": null,
+    "thumbnailUrl": "https://i.ytimg.com/vi/HeoLCz5ENa8/hqdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "parentEpisode": "002-albert-esplugas",
+    "sourceTimestamp": null,
+    "caption": "AI amplifies what makes us human."
+  }
+}

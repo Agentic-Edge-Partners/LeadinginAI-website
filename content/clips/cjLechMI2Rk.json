@@ -1,0 +1,17 @@
+{
+  "schema": "clip/1",
+  "youtubeId": "cjLechMI2Rk",
+  "sync": {
+    "title": "AI Agents Specialized Roles & Collaboration",
+    "rawTitle": "AI Agents Specialized Roles & Collaboration",
+    "publishedAt": "2026-05-28",
+    "durationSeconds": null,
+    "thumbnailUrl": "https://i.ytimg.com/vi/cjLechMI2Rk/hqdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "parentEpisode": "003-jaume-portell",
+    "sourceTimestamp": null,
+    "caption": "How PageMind coordinates 30+ specialised agents."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "episode/1",
+  "slug": "009-vuk-vegezzi",
+  "number": 9,
+  "season": 1,
+  "sync": {
+    "title": "Visium's Approach to AI Transformation",
+    "rawTitle": "#9 - Vuk Vegezzi: Visium's Approach to AI Transformation | Leading in AI Podcast",
+    "publishedAt": "2026-07-24",
+    "youtubeId": "h3CkDDP0pwc",
+    "spotifyEpisodeId": "4zCRHoL5U5NtHEhzP1j9ck",
+    "durationSeconds": null,
+    "youtubeDescription": "Vuk Vegezzi is Partner at Visium, a Swiss AI and data company that helps organizations unlock transformative impact through AI. He began his career evaluating startups for investment at BB4 before joining Visium in 2022, where he built the firm's consulting practice from scratch to more than 20 clients and five long-term partnerships in just two years. Visium specializes in AI transformation for regulated industries, particularly life sciences and chemicals, and recently opened offices in Barcelona as part of its European expansion.\n\nIn this episode, Vuk shares Visium's approach to AI transformation, from how they scope and scale projects with clients to the discipline behind turning proof-of-concepts into enterprise-wide adoption.\n\nTopics covered:\n- Vuk's path from startup investing to building an AI consulting practice\n- Visium's project funnel: from use case ideation to POC, MVP, and production\n. What makes Visium different from other AI consultancies\n. Why Visium chose Barcelona for its latest European office\n- Building Gen AI fragrance formulas with a market-leading perfume house\n- How data and people maturity shape which AI use cases succeed\n- Visium's growth plans across Europe and beyond\n\nConnect with Vuk Vegezzi: https://ch.linkedin.com/in/vuk-vegezzi-114880104\n\nAbout Leading in AI:\nAgentic Edge: https://agenticedge.eu/\nAgentic Edge - LinkedIn: https://www.linkedin.com/company/agenticedge-eu/\nLeading in AI - LinkedIn: https://www.linkedin.com/showcase/leading-in-ai/\nInstagram: https://www.instagram.com/leadinginai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/h3CkDDP0pwc/maxresdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "guests": ["vuk-vegezzi"],
+    "topics": ["enterprise-transformation", "ai-strategy"],
+    "summary": "Vuk Vegezzi is a Partner at Visium, a Swiss AI and data company working with regulated industries such as life sciences and chemicals. He joined in 2022 and built the firm's consulting practice from scratch to more than twenty clients and five long-term partnerships in two years. In this conversation he lays out Visium's project funnel from use-case ideation to proof-of-concept, MVP and production, explains why data and people maturity decide which use cases succeed, and shares the story behind building generative AI fragrance formulas with a market-leading perfume house and why Visium chose Barcelona for its newest European office.",
+    "hook": "How a Swiss AI consultancy turns proof-of-concepts into enterprise-wide adoption.",
+    "featured": true,
+    "chapters": [],
+    "quotes": [],
+    "links": [
+      {
+        "label": "Visium",
+        "url": "https://visium.ch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "episode/1",
+  "slug": "008-joan-clotet",
+  "number": 8,
+  "season": 1,
+  "sync": {
+    "title": "Keeping Humans at the Center of AI",
+    "rawTitle": "#8 - Joan Clotet: Keeping Humans at the Center of AI | Leading in AI Podcast",
+    "publishedAt": "2026-07-15",
+    "youtubeId": "Gj--98r27mI",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Joan Clotet is a talent and leadership advisor, author, and podcast host who has spent nearly a decade building and championing the concept of Digital Humanism. With almost 40 years of experience inside organizations like Arthur Andersen, Ferrovial, and Grupo Zeta, Joan made the shift from IT consulting into talent and human resources before eventually going independent to work only with companies that genuinely invest in their people. He is the author of Humanismo Digital, a framework for keeping humans at the center of leadership decisions in an increasingly digital world.\n\nIn this episode, Joan shares the personal and professional origins of Digital Humanism, what it really means to become an independent advisor after decades inside large organizations, and how companies can help their people move from fearing AI to working alongside it. We also get into why empathy and context are the leadership skills AI can't replace, how to hire and manage \"AI-augmented\" junior talent, and his honest take on whether we'll ever see robots as our colleagues.\n\nTopics covered:\n\n- The origin story: How and why Joan coined \"Digital Humanism\" back in 2015\n- Going independent: What it takes to \"invent your own job\" and only work with clients who value people\n- Augmented, not automated: What \"humans augmented by AI\" really looks like inside a company\n- The leadership skills AI can't replace: Empathy, context, and promoting change instead of just adapting to it\n- Hiring the next generation: What it means to onboard \"AI-augmented juniors\"\n- Robots as colleagues? Joan's take on AI-led companies and where he draws the line\n\nConnect with Joan Clotet: https://www.linkedin.com/in/joanclotet/\n\nAbout Leading in AI: Agentic Edge:\nhttps://agenticedge.eu/\nAgentic Edge - LinkedIn: https://www.linkedin.com/company/agenticedge-eu\nLeading in AI - LinkedIn: https://www.linkedin.com/company/leading-in-ai\nInstagram: https://www.instagram.com/leadinginai",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Gj--98r27mI/maxresdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "guests": ["joan-clotet"],
+    "topics": ["human-centred-ai", "ai-strategy"],
+    "summary": "Joan Clotet is a talent and leadership advisor, author and podcast host who coined the concept of Digital Humanism in 2015 and has spent nearly a decade championing it. After almost forty years inside organisations such as Arthur Andersen, Ferrovial and Grupo Zeta, he went independent to work only with companies that genuinely invest in their people. He talks about the origins of Digital Humanism, what it takes to invent your own job after decades in large organisations, how companies can help people move from fearing AI to working alongside it, how to hire and manage AI-augmented junior talent, and why empathy and context are the leadership skills AI cannot replace.",
+    "hook": "Why empathy and context are the leadership skills AI can't replace.",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}

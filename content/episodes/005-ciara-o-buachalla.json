@@ -1,0 +1,27 @@
+{
+  "schema": "episode/1",
+  "slug": "005-ciara-o-buachalla",
+  "number": 5,
+  "season": 1,
+  "sync": {
+    "title": "Responsible AI Starts with Governance",
+    "rawTitle": "#5 - Ciara O'Buachalla: Responsible AI Starts with Governance | Leading in AI Podcast",
+    "publishedAt": "2026-06-10",
+    "youtubeId": "7Yz8B91e1fY",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Ciara O'Buachalla is an AI governance advisor and lawyer who helps organizations navigate AI regulation, risk, and responsible deployment. A former solicitor and legal tech founder, she now works in AI governance and sits on the EU working group on women in the AI economy. In this episode, we cover why governance has become the other half of AI adoption, and how companies can keep up as the rules keep shifting.\n\nTopics covered:\n- From solicitor to founder: how ChatGPT pulled her into legal AI\n- Shadow AI: what it looks like inside companies and how to manage it\n- The mitigation playbook: an enterprise tool, a guide, and real training\n- Why assessing AI risk is so much greyer than traditional data privacy\n- Is the EU getting AI regulation right?\n\nConnect with Ciara O'Buachalla: https://www.linkedin.com/in/ciara-o-buachalla-lawyer-mba-ai-governance-advisor/\n\nAbout Leading in AI:\nAgentic Edge: https://agenticedge.eu/\nAgentic Edge - LinkedIn: https://www.linkedin.com/company/agenticedge-eu/\nLeading in AI - LinkedIn: https://www.linkedin.com/showcase/leading-in-ai/\nInstagram: https://www.instagram.com/leadinginai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/7Yz8B91e1fY/maxresdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "guests": ["ciara-o-buachalla"],
+    "topics": ["governance", "public-policy"],
+    "summary": "Ciara O'Buachalla is an AI governance advisor and lawyer who helps organisations navigate AI regulation, risk and responsible deployment. A former solicitor and legal-tech founder, she now works in AI governance and sits on the EU working group on women in the AI economy. The conversation covers how ChatGPT pulled her into legal AI, what shadow AI looks like inside companies and how to manage it, a practical mitigation playbook built on an enterprise tool, a guide and real training, why assessing AI risk is so much greyer than traditional data privacy, and whether the EU is getting AI regulation right.",
+    "hook": "Governance is the other half of AI adoption.",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}

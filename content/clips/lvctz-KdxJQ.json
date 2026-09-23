@@ -1,0 +1,17 @@
+{
+  "schema": "clip/1",
+  "youtubeId": "lvctz-KdxJQ",
+  "sync": {
+    "title": "AI Strategy: Business First",
+    "rawTitle": "AI Strategy: Business First",
+    "publishedAt": "2026-05-21",
+    "durationSeconds": null,
+    "thumbnailUrl": "https://i.ytimg.com/vi/lvctz-KdxJQ/hqdefault.jpg",
+    "lastSyncedAt": "2026-09-23T12:00:00Z"
+  },
+  "editorial": {
+    "parentEpisode": "002-albert-esplugas",
+    "sourceTimestamp": null,
+    "caption": "AI transformation in three minutes."
+  }
+}
