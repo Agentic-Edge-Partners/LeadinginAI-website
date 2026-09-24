@@ -34,13 +34,27 @@ local JSON content validated with Zod · MiniSearch · Beehiiv via an API route 
 
 ## Deploy
 
-1. **Vercel**: import the GitHub repo, framework preset *Next.js*, no build overrides.
-   Add environment variables from `.env.example` (`BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`,
-   `NEXT_PUBLIC_SITE_URL=https://leadinginaipodcast.com`).
-2. **Domain**: in Vercel add `leadinginaipodcast.com` and `www.leadinginaipodcast.com`.
-   In Cloudflare DNS create the records Vercel shows (`A` for the apex, `CNAME` for `www`)
-   with the proxy **off** (grey cloud, DNS-only) so Vercel can issue certificates.
-3. **GitHub secrets**: `YOUTUBE_API_KEY` for the scheduled sync workflow.
+1. **Vercel**: at vercel.com/new import this GitHub repo. Framework preset *Next.js*,
+   no build overrides. Under Environment Variables add
+   `NEXT_PUBLIC_SITE_URL` (the URL the site will live at) and, when you have them,
+   `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID`. Click Deploy: the first build gives
+   you a `*.vercel.app` URL to share.
+2. **Redeploys happen automatically.** Every push to `main` deploys to production and
+   every pull request gets its own preview URL, via Vercel's Git integration. Nothing
+   else is needed. For redeploying without a code change (after changing env vars, or on
+   a schedule) use the *Redeploy on Vercel* GitHub Action: create a Deploy Hook in
+   Vercel → Settings → Git and store its URL as the repo secret `VERCEL_DEPLOY_HOOK_URL`.
+3. **Domain** (when ready): in Vercel add `leadinginaipodcast.com` and
+   `www.leadinginaipodcast.com`. In Cloudflare DNS create the records Vercel shows
+   (`A` for the apex, `CNAME` for `www`) with the proxy **off** (grey cloud, DNS-only)
+   so Vercel can issue certificates. Then set `NEXT_PUBLIC_SITE_URL` to the real domain
+   and redeploy.
+4. **GitHub secrets**: `YOUTUBE_API_KEY` for the scheduled sync workflow,
+   `VERCEL_DEPLOY_HOOK_URL` for manual redeploys.
+
+Note for the free (Hobby) Vercel plan with a repo owned by a GitHub organisation:
+commits must be authored by a GitHub account that is a member of the Vercel project,
+otherwise Vercel skips the build. Pushes from your own account are fine.
 
 ## Content workflow
 

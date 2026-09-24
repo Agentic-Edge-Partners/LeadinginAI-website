@@ -1,0 +1,32 @@
+# Manual (or scheduled) redeploy of the production site on Vercel.
+#
+# Vercel's Git integration already deploys every push to main and gives every
+# pull request a preview URL, so this workflow is only for redeploying WITHOUT a
+# code change: after editing environment variables, or on a schedule.
+#
+# Setup (once): Vercel → Project → Settings → Git → Deploy Hooks → create a hook
+# for the `main` branch, then add its URL as the repository secret
+# VERCEL_DEPLOY_HOOK_URL.
+name: Redeploy on Vercel
+
+on:
+  workflow_dispatch:
+  # Uncomment to redeploy every morning (UTC), e.g. after overnight content merges:
+  # schedule:
+  #   - cron: "0 6 * * *"
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::Repository secret VERCEL_DEPLOY_HOOK_URL is not set (see workflow comments)."
+            exit 1
+          fi
+          curl --fail --silent --show-error -X POST "$HOOK" | tee response.json
+          echo
+          echo "Deploy triggered. Track it in the Vercel dashboard."
