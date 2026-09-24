@@ -15,13 +15,8 @@
     "lastSyncedAt": "2026-09-23T12:00:00Z"
   },
   "editorial": {
-    "guests": [
-      "joan-clotet"
-    ],
-    "topics": [
-      "ai-strategy",
-      "enterprise-transformation"
-    ],
+    "guests": ["joan-clotet"],
+    "topics": ["ai-strategy", "enterprise-transformation"],
     "summary": "Joan Clotet is a talent and leadership advisor, author and podcast host who coined the concept of Digital Humanism in 2015 and has spent nearly a decade championing it. After almost forty years inside organisations such as Arthur Andersen, Ferrovial and Grupo Zeta, he went independent to work only with companies that genuinely invest in their people. He talks about the origins of Digital Humanism, what it takes to invent your own job after decades in large organisations, how companies can help people move from fearing AI to working alongside it, how to hire and manage AI-augmented junior talent, and why empathy and context are the leadership skills AI cannot replace.",
     "hook": "Why empathy and context are the leadership skills AI can't replace.",
     "featured": false,

@@ -15,14 +15,8 @@
     "lastSyncedAt": "2026-09-23T12:00:00Z"
   },
   "editorial": {
-    "guests": [
-      "albert-esplugas"
-    ],
-    "topics": [
-      "ai-strategy",
-      "agents",
-      "enterprise-transformation"
-    ],
+    "guests": ["albert-esplugas"],
+    "topics": ["ai-strategy", "agents", "enterprise-transformation"],
     "summary": "Albert Esplugas is CEO of Futuria Strategy, with more than thirty years in technology, innovation and digital transformation, twelve of them at Microsoft and Amazon headquarters in Seattle. A former professor at ESADE, he recently published a book on AI written in collaboration with AI itself. Having lived through the PC, internet, mobile and cloud waves, he argues that AI is the biggest of the five because it democratises intelligence itself. The conversation covers the three-year window from experimentation to execution, how to connect AI strategy to business strategy, why human ingenuity will grow with AI rather than shrink, and how agents will connect the dots across organisations.",
     "hook": "Five technology waves, and why this one is the biggest.",
     "featured": false,

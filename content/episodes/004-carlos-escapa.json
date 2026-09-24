@@ -15,14 +15,8 @@
     "lastSyncedAt": "2026-09-23T12:00:00Z"
   },
   "editorial": {
-    "guests": [
-      "carlos-escapa"
-    ],
-    "topics": [
-      "ai-strategy",
-      "enterprise-transformation",
-      "public-policy"
-    ],
+    "guests": ["carlos-escapa"],
+    "topics": ["ai-strategy", "enterprise-transformation", "public-policy"],
     "summary": "Carlos Escapa spent more than a decade in leadership roles at Amazon Web Services and Meta, building AI ecosystems and industrial alliances. He is co-author of The AI-Driven Business, a lecturer at ESADE, UC Berkeley-Haas and Instituto de Empresa, Executive in Residence at Across Legal, and has trained over four thousand executives on AI strategy. Based between San Francisco and Barcelona, he shares what PyTorch and the open-source movement taught him about collaboration, Amazon's methodology for innovation, the biggest mistakes companies make when adopting AI, why corporate data is the real competitive moat, and where Europe stands in the AI race as sovereignty becomes a strategic priority.",
     "hook": "Lessons from AWS and Meta on what European companies must do to stay competitive.",
     "featured": false,

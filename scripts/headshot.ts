@@ -20,9 +20,14 @@ const TOOL_SRC = path.join(ROOT, "scripts", "cutout", "cutout.swift");
 const TOOL_BIN = path.join(ROOT, "scripts", "cutout", "cutout");
 
 function ensureTool() {
-  if (fs.existsSync(TOOL_BIN) && fs.statSync(TOOL_BIN).mtimeMs >= fs.statSync(TOOL_SRC).mtimeMs) return;
+  if (fs.existsSync(TOOL_BIN) && fs.statSync(TOOL_BIN).mtimeMs >= fs.statSync(TOOL_SRC).mtimeMs)
+    return;
   console.log("Compiling the Vision cutout tool (one time)…");
-  execFileSync("xcrun", ["swiftc", "-O", TOOL_SRC, "-o", TOOL_BIN, "-framework", "Vision", "-framework", "CoreImage"], { stdio: "inherit" });
+  execFileSync(
+    "xcrun",
+    ["swiftc", "-O", TOOL_SRC, "-o", TOOL_BIN, "-framework", "Vision", "-framework", "CoreImage"],
+    { stdio: "inherit" },
+  );
 }
 
 export async function makeHeadshot(slug: string, input: string) {
@@ -60,15 +65,26 @@ export async function makeHeadshot(slug: string, input: string) {
   </svg>`);
   const out = path.join(ROOT, "public", "guests", `${slug}.jpg`);
   await sharp(bg)
-    .composite([{ input: personBuf, left: Math.round((S - (pInfo.width ?? 0)) / 2), top: S - (pInfo.height ?? 0) }])
+    .composite([
+      {
+        input: personBuf,
+        left: Math.round((S - (pInfo.width ?? 0)) / 2),
+        top: S - (pInfo.height ?? 0),
+      },
+    ])
     .jpeg({ quality: 88, mozjpeg: true })
     .toFile(out);
 
   const guest = JSON.parse(fs.readFileSync(guestFile, "utf8"));
   guest.headshot = `/guests/${slug}.jpg`;
   fs.writeFileSync(guestFile, `${JSON.stringify(guest, null, 2)}\n`);
-  console.log(`✔ ${slug}: cutout ${meta.width}×${meta.height} → artwork/guests/${slug}.png, headshot → public/guests/${slug}.jpg`);
-  if ((meta.height ?? 0) < 900) console.log(`⚠ Source is small (${meta.height}px tall). Thumbnails will look soft; use a photo ≥1200px tall when you have one.`);
+  console.log(
+    `✔ ${slug}: cutout ${meta.width}×${meta.height} → artwork/guests/${slug}.png, headshot → public/guests/${slug}.jpg`,
+  );
+  if ((meta.height ?? 0) < 900)
+    console.log(
+      `⚠ Source is small (${meta.height}px tall). Thumbnails will look soft; use a photo ≥1200px tall when you have one.`,
+    );
 }
 
 if (process.argv[1] && process.argv[1].endsWith("headshot.ts")) {
