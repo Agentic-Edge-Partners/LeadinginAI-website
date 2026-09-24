@@ -1,0 +1,12 @@
+
+> leadinginai-website@0.1.0 sync
+> tsx scripts/sync.ts
+
+
+ℹ Fetched 15 videos via youtube-rss
+✔ Content already up to date
+⚠ YOUTUBE_API_KEY not set: using the RSS fallback (latest 15 videos, no durations). See .env.example
+⚠ Clip LIrKx5aFeJI "Is There Any Intelligence in AI?" has no parentEpisode
+⚠ 8 episode(s) without a transcript: 002-albert-esplugas, 003-jaume-portell, 004-carlos-escapa, 005-ciara-o-buachalla, 006-jordi-escayola, 007-gianmarco-mazzocchi, 008-joan-clotet, 009-vuk-vegezzi. Drop .srt files in content/transcripts/_inbox/ (docs/WORKFLOW.md)
+
+Next: npm run validate  →  npm run dev  →  commit.
