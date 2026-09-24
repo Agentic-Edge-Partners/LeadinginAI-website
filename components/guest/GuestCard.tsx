@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import type { GuestCardData } from "@/lib/cards";
 import { GuestAvatar } from "./GuestAvatar";
 import { EASE } from "@/lib/motion";
+import { episodeLabel } from "@/lib/format";
 
 export function GuestCard({ guest: g, priority }: { guest: GuestCardData; priority?: boolean }) {
   const line = [g.role, g.company].filter(Boolean).join(", ");
@@ -25,12 +26,17 @@ export function GuestCard({ guest: g, priority }: { guest: GuestCardData; priori
         <div className="mt-4">
           <h3 className="heading text-ink transition-colors group-hover:text-cyan">{g.name}</h3>
           {line && <p className="mt-1 text-sm text-ink-muted">{line}</p>}
-          <p className="mt-2 meta text-ink-dim">
-            {g.industry}
-            {g.episodeCount > 1 && (
-              <span className="ml-2 text-cyan">{g.episodeCount} episodes</span>
-            )}
-          </p>
+          {g.latestEpisodeTitle && (
+            <p className="mt-3 border-t border-line pt-3 text-sm">
+              {g.latestEpisodeNumber !== null && (
+                <span className="mr-2 meta text-cyan">{episodeLabel(g.latestEpisodeNumber)}</span>
+              )}
+              <span className="text-ink-muted">{g.latestEpisodeTitle}</span>
+              {g.episodeCount > 1 && (
+                <span className="ml-1 text-ink-dim">+{g.episodeCount - 1} more</span>
+              )}
+            </p>
+          )}
         </div>
       </Link>
     </motion.article>

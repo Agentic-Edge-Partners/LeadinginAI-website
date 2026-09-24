@@ -22,6 +22,8 @@ npm run dev                  # http://localhost:3000
 |---|---|
 | `npm run sync` | Pull new episodes, clips and transcripts from YouTube into `content/` and print a report |
 | `npm run validate` | Validate every content file (runs automatically before `build`) |
+| `npm run artwork` | Render YouTube thumbnails, the channel banner and logo concepts into `artwork/` |
+| `npm run headshot -- <slug> <photo>` | Cut a guest out of a photo (macOS Vision) for the site and thumbnails |
 | `npm run build` | Production build. Fails loudly on broken content |
 | `npm run lint` / `typecheck` / `format` | The usual |
 

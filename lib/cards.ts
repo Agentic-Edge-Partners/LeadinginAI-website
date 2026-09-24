@@ -52,9 +52,12 @@ export type GuestCardData = {
   headshot: string | null;
   episodeCount: number;
   latestEpisodeSlug: string | null;
+  latestEpisodeTitle: string | null;
+  latestEpisodeNumber: number | null;
 };
 
-export function toGuestCard(g: Guest): GuestCardData {
+export function toGuestCard(g: Guest, episodes: Episode[] = []): GuestCardData {
+  const latest = episodes.find((e) => e.slug === g.episodes?.[0]);
   return {
     slug: g.slug,
     name: g.name,
@@ -64,5 +67,7 @@ export function toGuestCard(g: Guest): GuestCardData {
     headshot: g.headshot,
     episodeCount: g.episodes?.length ?? 0,
     latestEpisodeSlug: g.episodes?.[0] ?? null,
+    latestEpisodeTitle: latest?.sync.title ?? null,
+    latestEpisodeNumber: latest?.number ?? null,
   };
 }

@@ -15,8 +15,13 @@
     "lastSyncedAt": "2026-09-23T12:00:00Z"
   },
   "editorial": {
-    "guests": ["vuk-vegezzi"],
-    "topics": ["enterprise-transformation", "ai-strategy"],
+    "guests": [
+      "vuk-vegezzi"
+    ],
+    "topics": [
+      "enterprise-transformation",
+      "ai-strategy"
+    ],
     "summary": "Vuk Vegezzi is a Partner at Visium, a Swiss AI and data company working with regulated industries such as life sciences and chemicals. He joined in 2022 and built the firm's consulting practice from scratch to more than twenty clients and five long-term partnerships in two years. In this conversation he lays out Visium's project funnel from use-case ideation to proof-of-concept, MVP and production, explains why data and people maturity decide which use cases succeed, and shares the story behind building generative AI fragrance formulas with a market-leading perfume house and why Visium chose Barcelona for its newest European office.",
     "hook": "How a Swiss AI consultancy turns proof-of-concepts into enterprise-wide adoption.",
     "featured": true,
@@ -27,6 +32,9 @@
         "label": "Visium",
         "url": "https://visium.ch"
       }
-    ]
+    ],
+    "thumbnail": {
+      "title": "Scaling AI *beyond* the pilot"
+    }
   }
 }

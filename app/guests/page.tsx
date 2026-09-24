@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { absoluteUrl, getGuests, getIndustries, getSite } from "@/lib/content";
+import { absoluteUrl, getEpisodes, getGuests, getIndustries, getSite } from "@/lib/content";
 import { toGuestCard } from "@/lib/cards";
 import { collectionJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 export default function GuestsPage() {
   const site = getSite();
+  const episodes = getEpisodes();
   const guests = getGuests().filter((g) => (g.episodes?.length ?? 0) > 0);
   const origin = absoluteUrl("/").replace(/\/$/, "");
   return (
@@ -32,7 +33,10 @@ export default function GuestsPage() {
         title="The guests"
         intro="Filter by industry. Every guest page collects their episodes, pull-quotes and related conversations."
       >
-        <GuestGrid guests={guests.map(toGuestCard)} industries={getIndustries()} />
+        <GuestGrid
+          guests={guests.map((g) => toGuestCard(g, episodes))}
+          industries={getIndustries()}
+        />
       </Section>
     </>
   );

@@ -15,13 +15,21 @@
     "lastSyncedAt": "2026-09-23T12:00:00Z"
   },
   "editorial": {
-    "guests": ["ciara-o-buachalla"],
-    "topics": ["governance", "public-policy"],
+    "guests": [
+      "ciara-o-buachalla"
+    ],
+    "topics": [
+      "governance",
+      "public-policy"
+    ],
     "summary": "Ciara O'Buachalla is an AI governance advisor and lawyer who helps organisations navigate AI regulation, risk and responsible deployment. A former solicitor and legal-tech founder, she now works in AI governance and sits on the EU working group on women in the AI economy. The conversation covers how ChatGPT pulled her into legal AI, what shadow AI looks like inside companies and how to manage it, a practical mitigation playbook built on an enterprise tool, a guide and real training, why assessing AI risk is so much greyer than traditional data privacy, and whether the EU is getting AI regulation right.",
     "hook": "Governance is the other half of AI adoption.",
     "featured": false,
     "chapters": [],
     "quotes": [],
-    "links": []
+    "links": [],
+    "thumbnail": {
+      "title": "*Governance* comes first"
+    }
   }
 }

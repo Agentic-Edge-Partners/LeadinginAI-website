@@ -17,6 +17,7 @@ import { GuestBio } from "@/components/guest/GuestBio";
 import { GuestCard } from "@/components/guest/GuestCard";
 import { EpisodeCard } from "@/components/episode/EpisodeCard";
 import { QuoteBlock } from "@/components/episode/QuoteBlock";
+import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 
 export const dynamicParams = false;
@@ -50,11 +51,13 @@ export default async function GuestPage({ params }: { params: Promise<{ slug: st
   const allGuests = getGuests();
   const episodes = getEpisodesForGuest(slug);
   const cards = episodes.map((e) => toEpisodeCard(e, allGuests, topics));
+  const [latest, ...older] = cards;
   const quotes = episodes.flatMap((e) =>
     e.editorial.quotes.filter((q) => q.speaker === slug).map((q) => ({ q, episode: e })),
   );
   const related = getRelatedGuests(slug);
   const origin = absoluteUrl("/").replace(/\/$/, "");
+  const firstName = g.name.split(" ")[0];
 
   return (
     <>
@@ -72,19 +75,40 @@ export default async function GuestPage({ params }: { params: Promise<{ slug: st
         <GuestBio guest={g} />
       </Section>
 
-      <Section
-        eyebrow="Episodes"
-        title={`${cards.length === 1 ? "The conversation" : "Conversations"} with ${g.name.split(" ")[0]}`}
-        tight
-      >
-        <StaggerGroup as="ul" count={cards.length} className="grid gap-x-6 gap-y-12 sm:grid-cols-2">
-          {cards.map((c, i) => (
-            <StaggerItem key={c.slug} as="li">
-              <EpisodeCard episode={c} priority={i === 0} />
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </Section>
+      {latest && (
+        <Section
+          eyebrow="On the podcast"
+          title={
+            older.length ? `Conversations with ${firstName}` : `The conversation with ${firstName}`
+          }
+          tight
+        >
+          <Reveal distance="none">
+            <EpisodeCard episode={latest} variant="featured" priority />
+          </Reveal>
+          {episodes[0]?.editorial.summary && (
+            <Reveal className="mt-10 grid gap-8 lg:grid-cols-12">
+              <p className="meta text-teal lg:col-span-2">In this episode</p>
+              <p className="max-w-3xl text-lg leading-relaxed text-ink-muted lg:col-span-10">
+                {episodes[0].editorial.summary}
+              </p>
+            </Reveal>
+          )}
+          {older.length > 0 && (
+            <StaggerGroup
+              as="ul"
+              count={older.length}
+              className="mt-16 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {older.map((c) => (
+                <StaggerItem key={c.slug} as="li">
+                  <EpisodeCard episode={c} />
+                </StaggerItem>
+              ))}
+            </StaggerGroup>
+          )}
+        </Section>
+      )}
 
       {quotes.length > 0 && (
         <Section eyebrow="In their words" title="Pull quotes" tight>
@@ -101,7 +125,7 @@ export default async function GuestPage({ params }: { params: Promise<{ slug: st
           <ul className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {related.map((r) => (
               <li key={r.slug}>
-                <GuestCard guest={toGuestCard(r)} />
+                <GuestCard guest={toGuestCard(r, getEpisodesForGuest(r.slug))} />
               </li>
             ))}
           </ul>

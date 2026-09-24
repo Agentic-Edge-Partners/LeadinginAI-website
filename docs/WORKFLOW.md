@@ -97,6 +97,35 @@ captions through the official API for every episode without a transcript.
 
 ---
 
+## Artwork: thumbnails, banner, headshots
+
+Artwork is generated from the same content the site uses, so nothing needs a
+design tool.
+
+```bash
+npm run headshot -- 010-maria-santos maria.jpg   # → cutout + square headshot + guest JSON updated
+npm run artwork thumbnails                        # → artwork/thumbnails/<slug>.jpg (1280×720)
+npm run artwork banner                            # → artwork/youtube-banner.jpg (2560×1440)
+```
+
+- **Headshot input:** any photo, ideally ≥1200px tall, guest facing the camera,
+  chest-up. The cutout uses macOS's built-in subject segmentation (no Adobe, no
+  upload). It writes `artwork/guests/<slug>.png` (transparent, used by thumbnails)
+  and `public/guests/<slug>.jpg` (square, used by the site).
+- **Thumbnail title:** set `editorial.thumbnail.title` on the episode — three to
+  five words, `*asterisks*` around the word to colour cyan. Example:
+  `"Scaling AI *beyond* the pilot"`. Falls back to the episode title.
+- Upload the JPG to YouTube Studio as the custom thumbnail. Keep the YouTube
+  title in the `#N - Guest: Title` format; the thumbnail carries the hook.
+- The banner's safe area (what every device shows) is the centred 1546×423 box;
+  `artwork/youtube-banner-guide.jpg` outlines it.
+
+The current eight cutouts were recovered from the old thumbnails, so they are
+low-resolution. Re-run `npm run headshot` with the original photos when you have
+them and the thumbnails and site update together.
+
+---
+
 ## Common edits
 
 | What you want | How |

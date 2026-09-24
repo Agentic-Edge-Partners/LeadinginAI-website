@@ -36,6 +36,8 @@ Read `PLAN.md` first: it records the decisions already made with the owner. Then
 ```bash
 npm run dev          # localhost:3000
 npm run sync         # pull new episodes/clips/transcripts into /content
+npm run artwork      # regenerate thumbnails/banner into /artwork
+npm run headshot -- <slug> <photo>   # cut out a guest photo for site + thumbnails
 npm run validate     # content checks (also runs before build)
 npm run build        # production build
 npm run lint && npm run typecheck && npm run format

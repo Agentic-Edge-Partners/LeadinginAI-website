@@ -59,6 +59,8 @@ export const EpisodeSchema = z.object({
     chapters: z.array(ChapterSchema).default([]),
     quotes: z.array(QuoteSchema).default([]),
     links: z.array(LinkSchema).default([]),
+    /** Input for `npm run artwork`. `*word*` marks the accent-coloured word. */
+    thumbnail: z.object({ title: z.string().nullable() }).optional(),
   }),
 });
 

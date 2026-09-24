@@ -75,7 +75,7 @@ export default function AboutPage() {
       )}
 
       <Section eyebrow="Guests" title="Who has been on" tight>
-        <GuestStrip guests={guests.map(toGuestCard)} />
+        <GuestStrip guests={guests.map((g) => toGuestCard(g, episodes))} />
       </Section>
 
       <Section

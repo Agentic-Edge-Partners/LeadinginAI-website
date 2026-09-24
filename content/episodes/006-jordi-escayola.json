@@ -15,13 +15,22 @@
     "lastSyncedAt": "2026-09-23T12:00:00Z"
   },
   "editorial": {
-    "guests": ["jordi-escayola"],
-    "topics": ["healthcare-pharma", "enterprise-transformation", "agents"],
+    "guests": [
+      "jordi-escayola"
+    ],
+    "topics": [
+      "healthcare-pharma",
+      "enterprise-transformation",
+      "agents"
+    ],
     "summary": "Jordi Escayola is a global AI and data science leader in the pharma industry, with more than twenty years deploying AI in complex sectors and over eighty large-scale projects across financial services, healthcare, manufacturing, retail and the public sector. He holds advanced degrees in mathematics and statistics and an executive MBA, and teaches at EAE and La Salle. He describes what deploying AI at scale inside a large pharma organisation really looks like, how to build a roadmap that works across global markets and cultures, why digital teams must become enablers rather than controllers, and where agentic frameworks are already delivering results.",
     "hook": "What deploying AI at scale inside a large pharma company actually looks like.",
     "featured": false,
     "chapters": [],
     "quotes": [],
-    "links": []
+    "links": [],
+    "thumbnail": {
+      "title": "AI in *pharma*, for real"
+    }
   }
 }

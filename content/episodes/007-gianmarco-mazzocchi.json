@@ -15,13 +15,22 @@
     "lastSyncedAt": "2026-09-23T12:00:00Z"
   },
   "editorial": {
-    "guests": ["gianmarco-mazzocchi"],
-    "topics": ["public-policy", "governance", "ai-strategy"],
+    "guests": [
+      "gianmarco-mazzocchi"
+    ],
+    "topics": [
+      "public-policy",
+      "governance",
+      "ai-strategy"
+    ],
     "summary": "Gianmarco Mazzocchi leads the AI Economics Unit at Whiteshield, which he built from the ground up after a career spanning investment banking in Frankfurt and consulting across the Middle East. His team uses machine learning and unconventional data, from satellite imagery to exotic datasets, to advise governments on macroeconomic strategy and public policy, and recently launched the Global Labour Resilience Index at the World Economic Forum in Davos. He explains what it takes to establish a new AI function inside a global firm, how slow-moving governments actually deploy machine learning, how to navigate bias and transparency in public policy, and where the debate on LLM scaling limits stands.",
     "hook": "Machine learning and satellite data in the service of governments.",
     "featured": false,
     "chapters": [],
     "quotes": [],
-    "links": []
+    "links": [],
+    "thumbnail": {
+      "title": "AI for *governments*"
+    }
   }
 }

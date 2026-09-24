@@ -39,6 +39,80 @@ export function EpisodeCard({
   const rail = variant === "rail";
   const compact = variant === "compact";
 
+  if (featured) {
+    return (
+      <motion.article
+        className={cx("group grid gap-6 lg:grid-cols-12 lg:items-center lg:gap-12", className)}
+        whileHover={{ y: -2 }}
+        transition={{ duration: 0.4, ease: EASE }}
+      >
+        <Link
+          href={`/episodes/${e.slug}`}
+          className="block rounded-card outline-offset-4 lg:col-span-7"
+          aria-label={`${episodeLabel(e.number)}: ${e.title}`}
+        >
+          <motion.div
+            layoutId={morph ? `episode-art-${e.slug}` : undefined}
+            className="relative aspect-video overflow-hidden rounded-img bg-surface-2"
+          >
+            <Image
+              src={e.thumbnailUrl}
+              alt=""
+              fill
+              priority={priority}
+              sizes="(min-width: 1024px) 720px, 100vw"
+              className="object-cover transition-transform duration-700 ease-house group-hover:scale-[1.04]"
+            />
+            <span
+              className="absolute inset-0 bg-gradient-to-t from-ground/60 via-transparent to-transparent opacity-80"
+              aria-hidden="true"
+            />
+            <span className="absolute top-3 left-3 rounded-sm bg-ground/80 px-1.5 py-0.5 meta text-ink backdrop-blur">
+              {episodeLabel(e.number)}
+            </span>
+            {duration && (
+              <span className="absolute right-3 bottom-3 rounded-sm bg-ground/80 px-1.5 py-0.5 meta text-ink backdrop-blur">
+                {duration}
+              </span>
+            )}
+          </motion.div>
+        </Link>
+        <div className="lg:col-span-5">
+          <p className="meta text-ink-dim">
+            {formatDate(e.publishedAt)}
+            {guests && (
+              <>
+                <span className="mx-2 text-line-bright" aria-hidden="true">
+                  /
+                </span>
+                <span className="tracking-normal text-ink-muted normal-case">{guests}</span>
+              </>
+            )}
+          </p>
+          <h3 className="mt-3 display-m text-ink">
+            <Link
+              href={`/episodes/${e.slug}`}
+              className="transition-colors group-hover:text-cyan hover:text-cyan"
+            >
+              {e.title}
+            </Link>
+          </h3>
+          {guestLine && <p className="mt-2 text-sm text-ink-muted">{guestLine}</p>}
+          {e.hook && <p className="mt-5 max-w-xl text-lg text-ink-muted">{e.hook}</p>}
+          {e.topics.length > 0 && (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {e.topics.map((t) => (
+                <Tag key={t.slug} href={`/topics/${t.slug}`}>
+                  {t.name}
+                </Tag>
+              ))}
+            </div>
+          )}
+        </div>
+      </motion.article>
+    );
+  }
+
   return (
     <motion.article
       className={cx("group relative", className)}
@@ -59,11 +133,9 @@ export function EpisodeCard({
             fill
             priority={priority}
             sizes={
-              featured
-                ? "(min-width: 1024px) 640px, 100vw"
-                : rail
-                  ? "(min-width: 640px) 420px, 80vw"
-                  : "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              rail
+                ? "(min-width: 640px) 420px, 80vw"
+                : "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
             }
             className="object-cover transition-transform duration-700 ease-house group-hover:scale-[1.04]"
           />
@@ -81,7 +153,7 @@ export function EpisodeCard({
           )}
         </motion.div>
 
-        <div className={cx("mt-4", featured && "mt-6")}>
+        <div className="mt-4">
           <p className="meta text-ink-dim">
             {formatDate(e.publishedAt)}
             {guests && (
@@ -102,18 +174,8 @@ export function EpisodeCard({
             {e.title}
           </h3>
           {guestLine && !compact && <p className="mt-1.5 text-sm text-ink-muted">{guestLine}</p>}
-          {featured && e.hook && <p className="mt-4 max-w-xl text-lg text-ink-muted">{e.hook}</p>}
         </div>
       </Link>
-      {featured && e.topics.length > 0 && (
-        <div className="mt-5 flex flex-wrap gap-2">
-          {e.topics.map((t) => (
-            <Tag key={t.slug} href={`/topics/${t.slug}`}>
-              {t.name}
-            </Tag>
-          ))}
-        </div>
-      )}
     </motion.article>
   );
 }

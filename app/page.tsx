@@ -60,7 +60,7 @@ export default function HomePage() {
           </Button>
         }
       >
-        <GuestStrip guests={guests.map(toGuestCard)} />
+        <GuestStrip guests={guests.map((g) => toGuestCard(g, episodes))} />
       </Section>
 
       <Section
