@@ -34,7 +34,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={podcastSeriesJsonLd(site, absoluteUrl("/").replace(/\/$/, ""))} />
-      {featuredCard && <Hero site={site} featured={featuredCard} episodeCount={episodes.length} />}
+      {featuredCard && <Hero site={site} featured={featuredCard} />}
 
       <Section
         eyebrow="Latest"

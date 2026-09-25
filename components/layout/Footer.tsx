@@ -26,9 +26,6 @@ export function Footer({ site }: { site: Site }) {
         <div className="md:col-span-5">
           <Wordmark className="w-36" />
           <p className="mt-6 max-w-sm text-ink-muted">{site.tagline}</p>
-          {site.host.name && (
-            <p className="mt-4 text-sm text-ink-dim">Hosted by {site.host.name}</p>
-          )}
         </div>
 
         <nav className="md:col-span-2" aria-label="Explore">

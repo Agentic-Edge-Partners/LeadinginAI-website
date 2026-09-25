@@ -34,7 +34,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-col gap-5 text-lg leading-relaxed text-ink-muted">
               <p>{site.about.intro}</p>
               <p>{site.about.audience}</p>
-              <p>{site.about.format}</p>
+              {site.about.format && <p>{site.about.format}</p>}
             </div>
           </Reveal>
           <Reveal delay={0.1} className="md:col-span-5 md:pl-8">

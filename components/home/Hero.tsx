@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Site } from "@/lib/schemas";
 import type { EpisodeCardData } from "@/lib/cards";
 import { Container } from "@/components/layout/Container";
@@ -12,15 +13,7 @@ import { Reveal } from "@/components/motion/Reveal";
  * Home hero: wordmark reveal, then one line with the positioning and the
  * calls to action, then the latest episode as a wide featured card.
  */
-export function Hero({
-  site,
-  featured,
-  episodeCount,
-}: {
-  site: Site;
-  featured: EpisodeCardData;
-  episodeCount: number;
-}) {
+export function Hero({ site, featured }: { site: Site; featured: EpisodeCardData }) {
   return (
     <section className="relative overflow-hidden dot-grid">
       <div
@@ -28,15 +21,13 @@ export function Hero({
         aria-hidden="true"
       />
       <Container className="relative pt-14 pb-20 md:pt-20 md:pb-24">
-        <p className="meta text-teal">Interview podcast · {episodeCount} episodes</p>
         <HeroReveal
-          className="mt-5"
           lines={[
             "Leading in",
-            <>
+            <Fragment key="ai-podcast">
               <span className="text-gradient">AI</span>
               <span className="ml-[0.22em] text-ink-dim">Podcast</span>
-            </>,
+            </Fragment>,
           ]}
         />
 

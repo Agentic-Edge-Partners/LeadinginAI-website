@@ -1,12 +1,11 @@
 /**
- * npm run artwork [thumbnails|banner|logos]
+ * npm run artwork [thumbnails|banner]
  *
  * Renders channel artwork from the same content and brand tokens the site
  * uses, so every thumbnail is on-brand without opening a design tool:
  *
  *   artwork/thumbnails/<slug>.jpg   1280×720 YouTube thumbnail per episode
  *   artwork/youtube-banner.jpg      2560×1440 channel banner (+ a guide with the safe area)
- *   artwork/logo-concepts.jpg       three logo directions for review
  *
  * Inputs: content/episodes/*.json (editorial.thumbnail.title, `*word*` = accent),
  * content/guests/*.json, artwork/guests/<slug>.png (transparent cutout — make one
@@ -144,51 +143,6 @@ function fitTitle(words: Word[], maxWidth: number, maxLines: number, letterSpaci
   return 64;
 }
 
-const Mark = ({ size = 1 }: { size?: number }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 10 * size }}>
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: 56 * size,
-        height: 56 * size,
-        borderRadius: 12 * size,
-        background: `linear-gradient(180deg, #3B4F8F 0%, ${C.teal} 50%, ${C.cyan} 100%)`,
-      }}
-    >
-      <span
-        style={{
-          fontFamily: "Archivo",
-          fontSize: 30 * size,
-          color: "rgba(0,0,0,0.8)",
-          letterSpacing: -1,
-        }}
-      >
-        AI
-      </span>
-    </div>
-    <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
-      <span
-        style={{ fontFamily: "Archivo", fontSize: 20 * size, color: C.ink, letterSpacing: 0.5 }}
-      >
-        LEADING IN AI
-      </span>
-      <span
-        style={{
-          fontFamily: "JetBrains Mono",
-          fontSize: 11 * size,
-          color: C.dim,
-          letterSpacing: 3 * size,
-          marginTop: 4 * size,
-        }}
-      >
-        PODCAST
-      </span>
-    </div>
-  </div>
-);
-
 // ── Thumbnails ────────────────────────────────────────────────────────────────
 async function thumbnails() {
   const lib = loadLibrary();
@@ -318,9 +272,6 @@ async function thumbnails() {
             </div>
           )}
         </div>
-        <div style={{ position: "absolute", right: 40, top: 34, display: "flex" }}>
-          <Mark />
-        </div>
       </div>
     );
     await render(el, 1280, 720, path.join(OUT, "thumbnails", `${e.slug}.jpg`), 92);
@@ -419,16 +370,6 @@ async function banner(guide = false) {
             {lib.site.tagline}
           </span>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 14 }}>
-          <span
-            style={{ fontFamily: "JetBrains Mono", fontSize: 26, color: C.cyan, letterSpacing: 6 }}
-          >
-            NEW EPISODES WEEKLY
-          </span>
-          <span style={{ fontFamily: "Inter", fontSize: 28, color: C.muted }}>
-            YouTube · Spotify · Apple Podcasts
-          </span>
-        </div>
       </div>
     </div>
   );
@@ -441,195 +382,6 @@ async function banner(guide = false) {
   );
 }
 
-// ── Logo concepts ─────────────────────────────────────────────────────────────
-function Bars({ h = 1 }: { h?: number }) {
-  const heights = [0.35, 0.65, 1, 0.65, 0.35];
-  return (
-    <div style={{ display: "flex", alignItems: "center", gap: 6 * h, height: 56 * h }}>
-      {heights.map((f, i) => (
-        <div
-          key={i}
-          style={{
-            width: 9 * h,
-            height: 56 * h * f,
-            borderRadius: 5 * h,
-            background: `linear-gradient(180deg, ${C.cyan} 0%, ${C.teal} 100%)`,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-const ConceptA = ({ light = false }) => (
-  <div style={{ display: "flex", alignItems: "baseline", gap: 18 }}>
-    <span
-      style={{
-        fontFamily: "Archivo",
-        fontSize: 64,
-        color: light ? C.navy : C.ink,
-        letterSpacing: -1,
-      }}
-    >
-      LEADING IN
-    </span>
-    <span style={{ fontFamily: "Archivo", fontSize: 96, color: C.cyan, letterSpacing: -3 }}>
-      AI
-    </span>
-    <span
-      style={{
-        fontFamily: "JetBrains Mono",
-        fontSize: 22,
-        color: light ? "#4B5675" : C.dim,
-        letterSpacing: 6,
-      }}
-    >
-      PODCAST
-    </span>
-  </div>
-);
-const ConceptB = ({ light = false }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: 104,
-        height: 104,
-        borderRadius: 24,
-        background: `linear-gradient(180deg, #3B4F8F 0%, ${C.teal} 50%, ${C.cyan} 100%)`,
-      }}
-    >
-      <span
-        style={{
-          fontFamily: "Archivo",
-          fontSize: 58,
-          color: "rgba(0,0,0,0.82)",
-          letterSpacing: -2,
-        }}
-      >
-        AI
-      </span>
-    </div>
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <span
-        style={{
-          fontFamily: "Archivo",
-          fontSize: 56,
-          color: light ? C.navy : C.ink,
-          letterSpacing: -1,
-          lineHeight: 1,
-        }}
-      >
-        LEADING IN AI
-      </span>
-      <span
-        style={{
-          fontFamily: "JetBrains Mono",
-          fontSize: 20,
-          color: light ? "#4B5675" : C.dim,
-          letterSpacing: 8,
-          marginTop: 10,
-        }}
-      >
-        PODCAST
-      </span>
-    </div>
-  </div>
-);
-const ConceptC = ({ light = false }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
-    <Bars h={1.6} />
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <span
-        style={{
-          fontFamily: "Archivo Condensed",
-          fontSize: 84,
-          color: light ? C.navy : C.ink,
-          letterSpacing: 0,
-          lineHeight: 0.9,
-          textTransform: "uppercase",
-        }}
-      >
-        Leading in AI
-      </span>
-      <span
-        style={{
-          fontFamily: "JetBrains Mono",
-          fontSize: 20,
-          color: light ? "#4B5675" : C.dim,
-          letterSpacing: 10,
-          marginTop: 10,
-        }}
-      >
-        THE PODCAST
-      </span>
-    </div>
-  </div>
-);
-async function logos() {
-  const rows = [
-    { label: "A · Current mark, refined (what the site uses today)", El: ConceptA },
-    { label: "B · Tile monogram + wordmark (works as avatar, favicon, watermark)", El: ConceptB },
-    {
-      label: "C · Signal bars + condensed wordmark (audio cue, more 'show', less 'consultancy')",
-      El: ConceptC,
-    },
-  ];
-  const el = (
-    <div
-      style={{
-        width: 1800,
-        height: 1500,
-        display: "flex",
-        flexDirection: "column",
-        background: C.ground,
-        padding: 60,
-        fontFamily: "Inter",
-      }}
-    >
-      <span style={{ fontFamily: "JetBrains Mono", fontSize: 22, color: C.cyan, letterSpacing: 6 }}>
-        LOGO DIRECTIONS · FOR REVIEW
-      </span>
-      {rows.map(({ label, El }, i) => (
-        <div key={i} style={{ display: "flex", flexDirection: "column", marginTop: 44 }}>
-          <span style={{ fontSize: 26, color: C.muted }}>{label}</span>
-          <div style={{ display: "flex", marginTop: 20, gap: 24 }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                flex: 1,
-                height: 300,
-                padding: 48,
-                borderRadius: 24,
-                background: C.surface,
-                border: "1px solid #1E2534",
-              }}
-            >
-              <El />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                width: 720,
-                height: 300,
-                padding: 48,
-                borderRadius: 24,
-                background: "#FFFFFF",
-              }}
-            >
-              <El light />
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-  await render(el, 1800, 1500, path.join(OUT, "logo-concepts.jpg"), 90);
-}
-
 const what = process.argv[2] ?? "all";
 (async () => {
   if (what === "all" || what === "thumbnails") await thumbnails();
@@ -637,7 +389,6 @@ const what = process.argv[2] ?? "all";
     await banner(false);
     await banner(true);
   }
-  if (what === "all" || what === "logos") await logos();
 })().catch((err) => {
   console.error(`✖ ${(err as Error).message}`);
   process.exit(1);

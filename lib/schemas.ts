@@ -166,7 +166,7 @@ export const SiteSchema = z.object({
   about: z.object({
     intro: z.string(),
     audience: z.string(),
-    format: z.string(),
+    format: z.string().optional(),
   }),
 });
 
