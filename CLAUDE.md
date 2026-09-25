@@ -31,6 +31,12 @@ Read `PLAN.md` first: it records the decisions already made with the owner. Then
 - **Apple Podcasts is a first-class slot.** `ListenOnLinks` renders `listen.apple` when non-null. Don't special-case it elsewhere.
 - Builds must be deterministic and offline-safe: no network at build time.
 
+## Skills
+
+- `/publish-episode` (`.claude/skills/publish-episode/SKILL.md`): the whole new-episode
+  pipeline — sync, editorial, guest, headshot, thumbnail, verify, commit, deploy. Use it
+  whenever an episode needs publishing or a thumbnail needs regenerating.
+
 ## Commands
 
 ```bash

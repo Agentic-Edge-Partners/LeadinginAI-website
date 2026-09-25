@@ -8,25 +8,31 @@ import { EpisodeCard } from "@/components/episode/EpisodeCard";
 import { ListenOnLinks } from "@/components/episode/ListenOnLinks";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { Reveal } from "@/components/motion/Reveal";
+import { HeroInteractive } from "./HeroInteractive";
+import { SignalField } from "./SignalField";
+import { KineticText } from "./KineticText";
 
 /**
- * Home hero: wordmark reveal, then one line with the positioning and the
- * calls to action, then the latest episode as a wide featured card.
+ * Home hero: wordmark reveal over a cursor-reactive signal field, then one
+ * line with the positioning and the calls to action, then the latest episode
+ * as a wide featured card. Interaction lives in HeroInteractive, SignalField
+ * and KineticText; this file only lays things out.
  */
 export function Hero({ site, featured }: { site: Site; featured: EpisodeCardData }) {
   return (
-    <section className="relative overflow-hidden dot-grid">
+    <HeroInteractive className="relative overflow-hidden dot-grid">
       <div
-        className="pointer-events-none absolute -top-48 left-1/2 -z-0 h-[40rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(13_156_172/0.22),transparent)]"
+        className="pointer-events-none absolute -top-48 left-1/2 h-[40rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(13_156_172/0.22),transparent)]"
         aria-hidden="true"
       />
-      <Container className="relative pt-14 pb-20 md:pt-20 md:pb-24">
+      <SignalField className="pointer-events-none absolute inset-0 [mask-image:linear-gradient(180deg,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_40%,transparent_72%)]" />
+      <Container className="relative z-10 pt-14 pb-20 md:pt-20 md:pb-24">
         <HeroReveal
           lines={[
-            "Leading in",
+            <KineticText key="leading-in" text="Leading in" />,
             <Fragment key="ai-podcast">
-              <span className="text-gradient">AI</span>
-              <span className="ml-[0.22em] text-ink-dim">Podcast</span>
+              <KineticText text="AI" letterClassName="text-gradient" />
+              <KineticText text="Podcast" className="ml-[0.22em]" letterClassName="text-ink-dim" />
             </Fragment>,
           ]}
         />
@@ -60,6 +66,6 @@ export function Hero({ site, featured }: { site: Site; featured: EpisodeCardData
           <EpisodeCard episode={featured} variant="featured" priority />
         </Reveal>
       </Container>
-    </section>
+    </HeroInteractive>
   );
 }

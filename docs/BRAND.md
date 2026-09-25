@@ -162,6 +162,14 @@ Cards reposition with `layout` animation when filters change, rather than
 snapping. Use `<AnimatePresence>` for entering/exiting cards. Keep the duration
 short (300ms) — long reflows feel sluggish when someone is scanning.
 
+**8. Hero signal field + kinetic headline** *(home)*
+Behind the headline, thin horizontal lines drift like a signal and part around
+the cursor (canvas, `components/home/SignalField.tsx`). The headline letters
+widen along Archivo's width axis (112% → 125%) and lift up to 7px as the cursor
+passes (`components/home/KineticText.tsx`). Both are driven by one pointer
+listener in `HeroInteractive`. Still frame and static type under reduced-motion;
+no pointer effects on touch.
+
 ### What NOT to do
 
 - No scroll-jacking. Lenis smooths the scroll; it must never take it over.

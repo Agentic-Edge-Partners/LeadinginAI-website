@@ -7,7 +7,7 @@
  *   artwork/thumbnails/<slug>.jpg   1280×720 YouTube thumbnail per episode
  *   artwork/youtube-banner.jpg      2560×1440 channel banner (+ a guide with the safe area)
  *
- * Inputs: content/episodes/*.json (editorial.thumbnail.title, `*word*` = accent),
+ * Inputs: content/episodes/*.json (editorial.thumbnail.title, `*phrase*` = the big line),
  * content/guests/*.json, artwork/guests/<slug>.png (transparent cutout — make one
  * with `npm run headshot -- <slug> <photo>`).
  */
@@ -104,26 +104,68 @@ async function dataUrl(
   };
 }
 
-// ── Title fitting ─────────────────────────────────────────────────────────────
-type Word = { text: string; accent: boolean };
-function parseTitle(t: string): Word[] {
-  return t
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((w) => {
-      const accent = /^\*.*\*[,.!?]?$/.test(w) || /\*/.test(w);
-      return { text: w.replace(/\*/g, ""), accent };
-    });
+/** Cutout with its right edge and bottom softly faded to transparent, so the photo melts into the ground. */
+async function fadedCutout(
+  file: string,
+): Promise<{ src: string; width: number; height: number } | null> {
+  if (!fs.existsSync(file)) return null;
+  const src = sharp(fs.readFileSync(file));
+  const { width = 1, height = 1 } = await src.metadata();
+  const mask = (grad: string) =>
+    Buffer.from(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><defs>${grad}</defs><rect width="${width}" height="${height}" fill="url(#m)"/></svg>`,
+    );
+  const horizontal = mask(
+    `<linearGradient id="m" x1="0" y1="0" x2="1" y2="0"><stop offset="0.62" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>`,
+  );
+  const vertical = mask(
+    `<linearGradient id="m" x1="0" y1="0" x2="0" y2="1"><stop offset="0.8" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0.15"/></linearGradient>`,
+  );
+  const buf = await sharp(await src.png().toBuffer())
+    .composite([{ input: horizontal, blend: "dest-in" }])
+    .png()
+    .toBuffer()
+    .then((b) =>
+      sharp(b)
+        .composite([{ input: vertical, blend: "dest-in" }])
+        .png()
+        .toBuffer(),
+    );
+  return { src: `data:image/png;base64,${buf.toString("base64")}`, width, height };
 }
-/** Picks the largest size whose greedy wrap fits `maxWidth` in ≤ maxLines (uppercase, measured). */
-function fitTitle(words: Word[], maxWidth: number, maxLines: number, letterSpacing = -1) {
-  for (let size = 136; size >= 64; size -= 4) {
-    const space = textWidth(" ", "Archivo Condensed", size);
+
+// ── Title parsing & fitting ───────────────────────────────────────────────────
+/**
+ * Thumbnail titles are one sentence with the punchline in *asterisks*:
+ *   "From zero to *20 clients* in two years."
+ * → small accent line, BIG white phrase, small accent line.
+ */
+function parseTitle(t: string): { pre: string; big: string; post: string } {
+  const m = t.match(/^([^*]*)\*([^*]+)\*([^*]*)$/);
+  if (!m) return { pre: "", big: t.trim(), post: "" };
+  // Punctuation glued to the phrase ("*agents*, two founders") stays with the phrase.
+  const trailing = m[3].match(/^([,.!?:;…]+)(.*)$/);
+  const big = m[2].trim() + (trailing ? trailing[1] : "");
+  const post = (trailing ? trailing[2] : m[3]).trim();
+  return { pre: m[1].trim(), big, post };
+}
+/** Largest size at which `text` wraps into ≤ maxLines within maxWidth (greedy, measured). */
+function fitText(
+  text: string,
+  font: string,
+  maxWidth: number,
+  maxLines: number,
+  from: number,
+  to: number,
+  letterSpacing = 0,
+) {
+  for (let size = from; size >= to; size -= 4) {
+    const space = textWidth(" ", font, size);
     let lines = 1,
       x = 0,
       ok = true;
-    for (const w of words) {
-      const ww = textWidth(w.text.toUpperCase(), "Archivo Condensed", size, letterSpacing) * 1.06; // measured + safety margin
+    for (const w of text.split(/\s+/)) {
+      const ww = textWidth(w, font, size, letterSpacing) * 1.05;
       if (ww > maxWidth) {
         ok = false;
         break;
@@ -137,10 +179,9 @@ function fitTitle(words: Word[], maxWidth: number, maxLines: number, letterSpaci
         break;
       }
     }
-    // Keep the title block under 400px tall so the name and role always fit beneath it.
-    if (ok && lines * size * 0.92 <= 400) return size;
+    if (ok) return size;
   }
-  return 64;
+  return to;
 }
 
 // ── Thumbnails ────────────────────────────────────────────────────────────────
@@ -148,12 +189,54 @@ async function thumbnails() {
   const lib = loadLibrary();
   for (const e of lib.episodes) {
     const guest = lib.guests.find((g) => g.slug === e.editorial.guests[0]);
-    const words = parseTitle(e.editorial.thumbnail?.title ?? e.sync.title);
-    const size = fitTitle(words, 600, 3);
-    const cut = guest ? await dataUrl(path.join(OUT, "guests", `${guest.slug}.png`)) : null;
-    const gH = 700;
+    const { pre, big, post } = parseTitle(e.editorial.thumbnail?.title ?? e.sync.title);
+    const TEXT_W = 680;
+    // Size the three lines together: cyan lines at 70% of the white one, then grow the whole
+    // block until it fills the column (≤ 2 lines per part, ≤ 560px tall).
+    const linesFor = (text: string, size: number) => {
+      if (!text) return 0;
+      const space = textWidth(" ", "Archivo", size);
+      let lines = 1,
+        x = 0;
+      for (const w of text.split(/\s+/)) {
+        const ww = textWidth(w, "Archivo", size, -2) * 1.05;
+        if (x > 0 && x + space + ww > TEXT_W) {
+          lines++;
+          x = ww;
+        } else x += (x > 0 ? space : 0) + ww;
+      }
+      return lines;
+    };
+    let bigSize = 88;
+    let smallSize = 62;
+    for (let b = 150; b >= 88; b -= 4) {
+      const sm = Math.round(b * 0.7);
+      const lp = linesFor(pre, sm),
+        lb = linesFor(big, b),
+        lpo = linesFor(post, sm);
+      const widest = Math.max(
+        ...[pre, post]
+          .filter(Boolean)
+          .map((t) => Math.max(...t.split(/\s+/).map((w) => textWidth(w, "Archivo", sm, -2)))),
+        ...big.split(/\s+/).map((w) => textWidth(w, "Archivo", b, -2)),
+      );
+      const height = lp * sm * 1.12 + lb * b * 1.0 + lpo * sm * 1.12 + 70;
+      if (lb <= 2 && lp <= 2 && lpo <= 2 && widest <= TEXT_W && height <= 560) {
+        bigSize = b;
+        smallSize = sm;
+        break;
+      }
+    }
+    const cut = guest ? await fadedCutout(path.join(OUT, "guests", `${guest.slug}.png`)) : null;
+    // Photo: bottom-aligned on the left with a little headroom; edges pre-faded into the ground.
+    const gH = 664;
     const gW = cut ? Math.round((cut.width / cut.height) * gH) : 0;
-    const gLeft = Math.min(1280 - gW + 40, Math.round(950 - gW / 2));
+    const gLeft = Math.round(290 - gW / 2);
+    // "Name · Company"; fall back to the role, and to the name alone if the line would wrap.
+    const withDetail = guest
+      ? [guest.name, guest.company ?? guest.role].filter(Boolean).join(" · ")
+      : "";
+    const nameLine = withDetail.length > 36 ? (guest?.name ?? "") : withDetail;
     const el = (
       <div
         style={{
@@ -161,28 +244,30 @@ async function thumbnails() {
           height: 720,
           display: "flex",
           position: "relative",
-          background: C.surface,
+          background: "#050608",
           overflow: "hidden",
+          fontFamily: "Archivo",
         }}
       >
+        {/* glow behind the text, like the reference's warm halo, in brand teal */}
         <div
           style={{
             position: "absolute",
-            left: 640,
-            top: 0,
-            width: 640,
-            height: 720,
-            background: `linear-gradient(165deg, #12BFD0 0%, ${C.teal} 50%, #086B76 100%)`,
+            left: 420,
+            top: -220,
+            width: 1100,
+            height: 1100,
+            background: `radial-gradient(circle at 50% 50%, rgba(13,156,172,0.5) 0%, rgba(13,156,172,0.2) 40%, rgba(13,156,172,0) 70%)`,
           }}
         />
         <div
           style={{
             position: "absolute",
-            left: 620,
-            top: 0,
-            width: 60,
-            height: 720,
-            background: `linear-gradient(90deg, ${C.surface} 0%, rgba(11,14,20,0) 100%)`,
+            left: -200,
+            top: 200,
+            width: 900,
+            height: 900,
+            background: `radial-gradient(circle at 50% 50%, rgba(26,35,66,0.7) 0%, rgba(26,35,66,0) 70%)`,
           }}
         />
         {cut && (
@@ -193,82 +278,92 @@ async function thumbnails() {
             style={{ position: "absolute", left: gLeft, top: 720 - gH }}
           />
         )}
+        {/* fade the photo's right edge and bottom into the ground so the text sits clean */}
         <div
           style={{
             position: "absolute",
-            left: 0,
+            left: 380,
             top: 0,
-            width: 640,
+            width: 360,
             height: 720,
-            background: `linear-gradient(90deg, ${C.surface} 82%, rgba(11,14,20,0) 100%)`,
+            background: `linear-gradient(90deg, rgba(5,6,8,0) 0%, rgba(5,6,8,0.85) 60%, rgba(5,6,8,0) 100%)`,
           }}
         />
         <div
           style={{
             position: "absolute",
-            left: 56,
-            top: 52,
-            width: 600,
+            left: 0,
+            top: 560,
+            width: 1280,
+            height: 160,
+            background: `linear-gradient(180deg, rgba(5,6,8,0) 0%, rgba(5,6,8,0.9) 100%)`,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 540,
+            top: 0,
+            width: TEXT_W,
+            height: 720,
             display: "flex",
             flexDirection: "column",
+            justifyContent: "center",
           }}
         >
-          <span
-            style={{ fontFamily: "JetBrains Mono", fontSize: 26, color: C.cyan, letterSpacing: 5 }}
-          >
-            {episodeLabel(e.number)}
-          </span>
+          {pre && (
+            <div
+              style={{
+                display: "flex",
+                fontSize: smallSize,
+                lineHeight: 1.15,
+                color: C.cyan,
+                letterSpacing: -1,
+              }}
+            >
+              {pre}
+            </div>
+          )}
           <div
             style={{
               display: "flex",
-              flexWrap: "wrap",
-              marginTop: 26,
-              width: 600,
-              fontFamily: "Archivo Condensed",
-              fontSize: size,
-              lineHeight: 0.92,
-              letterSpacing: -1,
-              textTransform: "uppercase",
+              marginTop: pre ? 4 : 0,
+              fontSize: bigSize,
+              lineHeight: 0.98,
               color: C.ink,
+              letterSpacing: -3,
+              textShadow: "0 6px 30px rgba(0,0,0,0.55)",
             }}
           >
-            {words.map((w, i) => (
-              <span
-                key={i}
-                style={{
-                  marginRight: textWidth(" ", "Archivo Condensed", size),
-                  color: w.accent ? C.cyan : C.ink,
-                }}
-              >
-                {w.text}
-              </span>
-            ))}
+            {big}
           </div>
-          <div style={{ marginTop: 30, width: 120, height: 5, background: C.cyan }} />
-          {guest && (
-            <div style={{ display: "flex", flexDirection: "column", width: 600, marginTop: 20 }}>
-              <span
-                style={{
-                  fontFamily: "Archivo",
-                  fontSize: guest.name.length > 18 ? 34 : 40,
-                  color: C.ink,
-                  textTransform: "uppercase",
-                  letterSpacing: 1,
-                }}
-              >
-                {guest.name}
-              </span>
-              <span
-                style={{
-                  marginTop: 8,
-                  fontFamily: "Inter",
-                  fontSize: 24,
-                  color: C.muted,
-                  lineHeight: 1.3,
-                }}
-              >
-                {[guest.role, guest.company].filter(Boolean).join(", ")}
-              </span>
+          {post && (
+            <div
+              style={{
+                display: "flex",
+                marginTop: 6,
+                fontSize: smallSize,
+                lineHeight: 1.15,
+                color: C.cyan,
+                letterSpacing: -1,
+              }}
+            >
+              {post}
+            </div>
+          )}
+          {nameLine && (
+            <div
+              style={{
+                display: "flex",
+                marginTop: 26,
+                fontFamily: "Inter",
+                fontWeight: 600,
+                fontSize: 28,
+                color: C.ink,
+                opacity: 0.92,
+              }}
+            >
+              {nameLine}
             </div>
           )}
         </div>
@@ -304,7 +399,7 @@ async function banner(guide = false) {
           top: H / 2 - 600,
           width: 1800,
           height: 1200,
-          background: `radial-gradient(closest-side, rgba(13,156,172,0.35), rgba(0,0,0,0))`,
+          background: `radial-gradient(circle at 50% 50%, rgba(13,156,172,0.35) 0%, rgba(13,156,172,0) 70%)`,
         }}
       />
       <span

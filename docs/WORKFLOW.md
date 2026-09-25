@@ -13,6 +13,10 @@ the whole point is that this stays a five-minute job forever.
 
 **Time budget: ~5 minutes.** Anything longer means something needs fixing.
 
+**Shortcut:** in Claude Code, type `/publish-episode`. The skill in
+`.claude/skills/publish-episode/` runs every step below, asks only for the guest photo,
+and ends with a deploy. The steps are documented here so they can also be done by hand.
+
 ### 1. Publish on YouTube and Spotify as usual
 Title the YouTube video in the established format — this is what the sync
 script parses:
@@ -112,9 +116,10 @@ npm run artwork banner                            # → artwork/youtube-banner.j
   chest-up. The cutout uses macOS's built-in subject segmentation (no Adobe, no
   upload). It writes `artwork/guests/<slug>.png` (transparent, used by thumbnails)
   and `public/guests/<slug>.jpg` (square, used by the site).
-- **Thumbnail title:** set `editorial.thumbnail.title` on the episode — three to
-  five words, `*asterisks*` around the word to colour cyan. Example:
-  `"Scaling AI *beyond* the pilot"`. Falls back to the episode title.
+- **Thumbnail title:** set `editorial.thumbnail.title` on the episode — one short
+  sentence with the punchline in `*asterisks*`. The punchline renders huge in white,
+  the rest small in cyan. Example: `"From zero to *20 clients* in two years."`.
+  Falls back to the episode title.
 - Upload the JPG to YouTube Studio as the custom thumbnail. Keep the YouTube
   title in the `#N - Guest: Title` format; the thumbnail carries the hook.
 - The banner's safe area (what every device shows) is the centred 1546×423 box;
