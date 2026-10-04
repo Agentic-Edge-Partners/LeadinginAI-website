@@ -1,0 +1,30 @@
+{
+  "schema": "episode/1",
+  "slug": "001-esteve-almirall",
+  "number": 1,
+  "season": 1,
+  "sync": {
+    "title": "2026 is the Year of AI Agents",
+    "rawTitle": "#1 - Esteve Almirall: 2026 is the Year of AI Agents | Leading in AI Podcast",
+    "publishedAt": "2026-05-13",
+    "youtubeId": "LWkYK_Bww34",
+    "spotifyEpisodeId": null,
+    "durationSeconds": 1241,
+    "youtubeDescription": "Esteve Almirall, Full Professor at Esade Business School, shares his insights on AI agents and why 2026 might just be the tipping point. \nCompetitive intensity is key! In sectors like technology and consulting, we see rapid adoption. But in others the pace is slower. Why? Because low competition means less pressure to innovate. \nIt's not just about tech; it’s about how society adopts these advancements.\n\n\nAgentic Edge: https://agenticedge.eu/\nAgentic Edge - Linkedin: https://www.linkedin.com/company/agenticedge-eu/\nLeading in AI - LinkedIn: https://www.linkedin.com/showcase/leading-in-ai/about/\nInstagram: https://www.instagram.com/leadinginai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/LWkYK_Bww34/maxresdefault.jpg",
+    "lastSyncedAt": "2026-10-04T12:00:00Z"
+  },
+  "editorial": {
+    "guests": ["esteve-almirall"],
+    "topics": ["agents", "enterprise-transformation"],
+    "summary": "Esteve Almirall is a Full Professor at Esade Business School. In the podcast's first episode he explains why 2026 could be the tipping point for AI agents, and why adoption moves at very different speeds across sectors. Competitive intensity is the deciding factor: technology and consulting firms adopt quickly because they have to, while industries with little competition feel less pressure to innovate. As he puts it, the shift is not only about the technology but about how society takes it up.",
+    "hook": "Why 2026 could be the tipping point for AI agents, and who adopts first.",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": [],
+    "thumbnail": {
+      "title": "The year of *AI agents*"
+    }
+  }
+}

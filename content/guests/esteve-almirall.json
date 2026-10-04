@@ -1,0 +1,17 @@
+{
+  "schema": "guest/1",
+  "slug": "esteve-almirall",
+  "name": "Esteve Almirall",
+  "role": "Full Professor",
+  "company": "Esade",
+  "companyUrl": "https://www.esade.edu",
+  "industry": "Academia",
+  "location": "Barcelona",
+  "bio": "Esteve Almirall is a Full Professor at Esade Business School in Barcelona. He studies how organisations and societies adopt AI, and why competitive pressure decides how fast each sector moves.",
+  "headshot": "/guests/esteve-almirall.jpg",
+  "links": {
+    "linkedin": null,
+    "x": null,
+    "website": null
+  }
+}
