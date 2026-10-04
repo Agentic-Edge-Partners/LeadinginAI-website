@@ -17,7 +17,6 @@ import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
 import { loadLibrary } from "../lib/content-core";
-import { episodeLabel } from "../lib/format";
 
 const ROOT = process.cwd();
 const FONTS = path.join(ROOT, "assets", "fonts");
@@ -91,19 +90,6 @@ async function render(
   console.log(`✔ ${path.relative(ROOT, file)}`);
 }
 
-async function dataUrl(
-  file: string,
-): Promise<{ src: string; width: number; height: number } | null> {
-  if (!fs.existsSync(file)) return null;
-  const buf = fs.readFileSync(file);
-  const meta = await sharp(buf).metadata();
-  return {
-    src: `data:image/png;base64,${buf.toString("base64")}`,
-    width: meta.width ?? 1,
-    height: meta.height ?? 1,
-  };
-}
-
 /** Cutout with its right edge and bottom softly faded to transparent, so the photo melts into the ground. */
 async function fadedCutout(
   file: string,
@@ -148,40 +134,6 @@ function parseTitle(t: string): { pre: string; big: string; post: string } {
   const big = m[2].trim() + (trailing ? trailing[1] : "");
   const post = (trailing ? trailing[2] : m[3]).trim();
   return { pre: m[1].trim(), big, post };
-}
-/** Largest size at which `text` wraps into ≤ maxLines within maxWidth (greedy, measured). */
-function fitText(
-  text: string,
-  font: string,
-  maxWidth: number,
-  maxLines: number,
-  from: number,
-  to: number,
-  letterSpacing = 0,
-) {
-  for (let size = from; size >= to; size -= 4) {
-    const space = textWidth(" ", font, size);
-    let lines = 1,
-      x = 0,
-      ok = true;
-    for (const w of text.split(/\s+/)) {
-      const ww = textWidth(w, font, size, letterSpacing) * 1.05;
-      if (ww > maxWidth) {
-        ok = false;
-        break;
-      }
-      if (x > 0 && x + space + ww > maxWidth) {
-        lines++;
-        x = ww;
-      } else x += (x > 0 ? space : 0) + ww;
-      if (lines > maxLines) {
-        ok = false;
-        break;
-      }
-    }
-    if (ok) return size;
-  }
-  return to;
 }
 
 // ── Thumbnails ────────────────────────────────────────────────────────────────
@@ -271,8 +223,11 @@ async function thumbnails() {
           }}
         />
         {cut && (
+          // Satori renders this to a PNG; next/image does not apply here.
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={cut.src}
+            alt=""
             width={gW}
             height={gH}
             style={{ position: "absolute", left: gLeft, top: 720 - gH }}

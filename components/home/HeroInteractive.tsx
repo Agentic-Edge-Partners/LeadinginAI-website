@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useMemo, useRef } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 
 /**
  * One pointer listener for the whole hero. The signal field and the kinetic
@@ -19,21 +19,35 @@ export type HeroPointer = {
 
 const HeroPointerContext = createContext<HeroPointer | null>(null);
 
-function createStore(): HeroPointer & { notify: () => void; listeners: Set<() => void> } {
+type HeroPointerStore = HeroPointer & {
+  move: (x: number, y: number, clientX: number, clientY: number) => void;
+  leave: () => void;
+};
+
+function createStore(): HeroPointerStore {
   const listeners = new Set<() => void>();
+  const notify = () => listeners.forEach((fn) => fn());
   return {
     x: -1e4,
     y: -1e4,
     clientX: -1e4,
     clientY: -1e4,
     active: false,
-    listeners,
     subscribe(fn) {
       listeners.add(fn);
       return () => listeners.delete(fn);
     },
-    notify() {
-      listeners.forEach((fn) => fn());
+    move(x, y, clientX, clientY) {
+      this.x = x;
+      this.y = y;
+      this.clientX = clientX;
+      this.clientY = clientY;
+      this.active = true;
+      notify();
+    },
+    leave() {
+      this.active = false;
+      notify();
     },
   };
 }
@@ -46,23 +60,15 @@ export function HeroInteractive({
   className?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
-  const store = useMemo(createStore, []);
+  const [store] = useState(createStore);
 
   const onPointerMove = (e: React.PointerEvent) => {
     if (e.pointerType !== "mouse") return;
     const r = ref.current?.getBoundingClientRect();
     if (!r) return;
-    store.x = e.clientX - r.left;
-    store.y = e.clientY - r.top;
-    store.clientX = e.clientX;
-    store.clientY = e.clientY;
-    store.active = true;
-    store.notify();
+    store.move(e.clientX - r.left, e.clientY - r.top, e.clientX, e.clientY);
   };
-  const onPointerLeave = () => {
-    store.active = false;
-    store.notify();
-  };
+  const onPointerLeave = () => store.leave();
 
   return (
     <section
