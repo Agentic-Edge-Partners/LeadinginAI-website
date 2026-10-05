@@ -1,0 +1,17 @@
+{
+  "schema": "guest/1",
+  "slug": "xavier-ferras",
+  "name": "Xavier Ferràs",
+  "role": "Full Professor",
+  "company": "Esade",
+  "companyUrl": "https://www.esade.edu",
+  "industry": "Academia",
+  "location": "Barcelona",
+  "bio": "Xavier Ferràs is a Full Professor at Esade and Associate Dean of its Executive MBA, and one of the leading voices on innovation in Spain. He has spoken at more than 200 conferences on strategy, innovation and technology, and his research looks at how AI is redefining competition.",
+  "headshot": "/guests/xavier-ferras.jpg",
+  "links": {
+    "linkedin": null,
+    "x": null,
+    "website": null
+  }
+}
