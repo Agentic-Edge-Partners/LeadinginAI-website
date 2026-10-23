@@ -1,0 +1,88 @@
+{
+  "schema": "episode/1",
+  "slug": "011-cristian-canton",
+  "number": 11,
+  "season": 1,
+  "sync": {
+    "title": "Supercomputing and Europe’s AI Future",
+    "rawTitle": "#11 - Cristian Canton: Supercomputing and Europe’s AI Future | Leading in AI Podcast",
+    "publishedAt": "2026-10-19",
+    "youtubeId": "mOujNzHLNzc",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Cristian Canton is Associate Director of the Barcelona Supercomputing Center (BSC), home of MareNostrum 5, one of the most powerful supercomputers in Europe. Before returning to Barcelona after 15 years in the US, he led Responsible AI at Meta, working on the safety and robustness of the Llama models, after years as a researcher at Microsoft.\n\nIn this episode, Cristian explains what it took to build safe large language models with no playbook, how BSC is opening supercomputing to startups through the AI Factory, and why he believes AI and quantum computing could unlock a new era of scientific progress.\n\nTopics covered:\n- Building Llama safely at Meta: trade-offs, guardrails and serving every language\n- Why he came back to Barcelona to lead BSC\n- Inside MareNostrum 5 and the quantum computers housed in a former chapel\n- The AI Factory: free supercomputing and expert support for startups and SMEs\n- Europe’s AI gigafactories and the push for technological sovereignty\n- How BSC turns research into spin-offs like Qilimanjaro and OpenChip\n- Partnering with industry: the Repsol story and beyond\n- Where AI and quantum computing meet\n\nTimestamps:\n00:00 Introduction\n00:35 Leading Responsible AI at Meta\n02:09 Building models for every language\n03:36 Coming back to Barcelona\n05:16 The mission of the Barcelona Supercomputing Center\n06:30 Inside MareNostrum 5\n08:26 The AI Factory and Europe’s gigafactories\n11:39 Startups from across Spain and Europe\n13:01 From research to spin-offs\n15:33 Partnering with industry\n18:26 AI and quantum computing\n20:50 The vision for BSC\n22:31 Where AI will surprise us the most\n\nConnect with Cristian Canton: https://www.linkedin.com/in/cristiancanton/\n\nAbout Leading in AI:\nWebsite: https://leadinginaipodcast.com/\nLinkedIn: https://www.linkedin.com/showcase/leading-in-ai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/mOujNzHLNzc/maxresdefault.jpg",
+    "lastSyncedAt": "2026-10-23T10:56:27Z"
+  },
+  "editorial": {
+    "guests": ["cristian-canton"],
+    "topics": ["governance", "public-policy"],
+    "summary": "Cristian Canton is Associate Director of the Barcelona Supercomputing Center (BSC), home of MareNostrum 5, one of the most powerful supercomputers in Europe. Before returning to Barcelona after 15 years in the US, he led Responsible AI at Meta, working on the safety and robustness of the Llama models, after years as a researcher at Microsoft. In this conversation he explains what it took to build safe large language models with no playbook and for every language, and how BSC is opening supercomputing to startups and SMEs through its AI Factory. He discusses Europe's AI gigafactories and the push for technological sovereignty, how BSC turns research into spin-offs such as Qilimanjaro and OpenChip, its partnerships with industry, and why AI and quantum computing together could unlock a new era of scientific progress.",
+    "hook": "From building Llama safely at Meta to opening Europe's supercomputers to startups.",
+    "featured": true,
+    "chapters": [
+      {
+        "start": 0,
+        "title": "Introduction"
+      },
+      {
+        "start": 35,
+        "title": "Leading Responsible AI at Meta"
+      },
+      {
+        "start": 129,
+        "title": "Building models for every language"
+      },
+      {
+        "start": 216,
+        "title": "Coming back to Barcelona"
+      },
+      {
+        "start": 316,
+        "title": "The mission of the Barcelona Supercomputing Center"
+      },
+      {
+        "start": 390,
+        "title": "Inside MareNostrum 5"
+      },
+      {
+        "start": 506,
+        "title": "The AI Factory and Europe’s gigafactories"
+      },
+      {
+        "start": 699,
+        "title": "Startups from across Spain and Europe"
+      },
+      {
+        "start": 781,
+        "title": "From research to spin-offs"
+      },
+      {
+        "start": 933,
+        "title": "Partnering with industry"
+      },
+      {
+        "start": 1106,
+        "title": "AI and quantum computing"
+      },
+      {
+        "start": 1250,
+        "title": "The vision for BSC"
+      },
+      {
+        "start": 1351,
+        "title": "Where AI will surprise us the most"
+      }
+    ],
+    "quotes": [],
+    "links": [
+      {
+        "label": "Barcelona Supercomputing Center",
+        "url": "https://www.bsc.es"
+      }
+    ],
+    "thumbnail": {
+      "title": "Europe’s *supercomputing* moment"
+    }
+  }
+}

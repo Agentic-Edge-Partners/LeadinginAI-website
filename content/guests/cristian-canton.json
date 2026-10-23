@@ -1,0 +1,17 @@
+{
+  "schema": "guest/1",
+  "slug": "cristian-canton",
+  "name": "Cristian Canton",
+  "role": "Associate Director",
+  "company": "Barcelona Supercomputing Center",
+  "companyUrl": "https://www.bsc.es",
+  "industry": "Research",
+  "location": "Barcelona",
+  "bio": "Cristian Canton is Associate Director of the Barcelona Supercomputing Center, home of MareNostrum 5. He previously led Responsible AI at Meta, working on the safety and robustness of the Llama models, after years as a researcher at Microsoft. He returned to Barcelona after 15 years in the US.",
+  "headshot": "/guests/cristian-canton.jpg",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/cristiancanton/",
+    "x": null,
+    "website": null
+  }
+}
