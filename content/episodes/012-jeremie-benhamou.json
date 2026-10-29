@@ -1,0 +1,29 @@
+{
+  "schema": "episode/1",
+  "slug": "012-jeremie-benhamou",
+  "number": 12,
+  "season": 1,
+  "sync": {
+    "title": "AI Transformation Starts With People",
+    "rawTitle": "#12 - Jérémie Benhamou: AI Transformation Starts With People | Leading in AI Podcast",
+    "publishedAt": "2026-10-26",
+    "youtubeId": "f05WRN6U5-M",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "",
+    "thumbnailUrl": "https://i.ytimg.com/vi/f05WRN6U5-M/maxresdefault.jpg",
+    "lastSyncedAt": "2026-10-29T13:55:46Z"
+  },
+  "editorial": {
+    "guests": [
+      "jeremie-benhamou"
+    ],
+    "topics": [],
+    "summary": "TODO",
+    "hook": "TODO",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}
