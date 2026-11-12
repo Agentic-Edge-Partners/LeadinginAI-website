@@ -1,0 +1,29 @@
+{
+  "schema": "episode/1",
+  "slug": "012-jeremie-benhamou",
+  "number": 12,
+  "season": 1,
+  "sync": {
+    "title": "AI Transformation Starts With People",
+    "rawTitle": "#12 - Jérémie Benhamou: AI Transformation Starts With People | Leading in AI Podcast",
+    "publishedAt": "2026-10-26",
+    "youtubeId": "f05WRN6U5-M",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Jérémie Benhamou is Founder & CEO of The Tech Nation, an AI transformation company based in Barcelona, and a Claude Ambassador. Before founding The Tech Nation, he spent 12 years at Extia, where he launched and led the company’s business in Spain. Today he is one of the people bringing Barcelona’s AI community together, most recently through the Claude Community House, which gathered more than 2,000 people.\n\nIn this episode, Jérémie explains why he became a founder at 38, why AI transformation starts with people rather than technology, and why he believes Barcelona can become one of Europe’s leading tech hubs.\n\nKey takeaways:\n- AI transformation is about people and organization, not just tech. Buying AI agents before your team is ready is money badly spent\n- It starts by getting leadership excited and building AI champions inside the team\n- The Tech Nation’s approach is built on the second brain method: each person has their own second brain, connected to a company second brain\n- With the right leadership, Europe’s way of thinking about AI can become an advantage, and -- - - Barcelona is earning its place among Europe’s innovation hubs\nWith curiosity, commitment and a laptop, anyone can now access the same knowledge and build. \n- Commitment is becoming the real differentiator\n\nListen on Spotify: https://open.spotify.com/episode/2pAieINvCpRL3Zt2IYMX14\nWatch on YouTube: https://www.youtube.com/watch?v=f05WRN6U5-M",
+    "thumbnailUrl": "https://i.ytimg.com/vi/f05WRN6U5-M/maxresdefault.jpg",
+    "lastSyncedAt": "2026-11-12T15:45:59Z"
+  },
+  "editorial": {
+    "guests": [
+      "jeremie-benhamou"
+    ],
+    "topics": [],
+    "summary": "TODO",
+    "hook": "TODO",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}

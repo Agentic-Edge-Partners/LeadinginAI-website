@@ -1,0 +1,29 @@
+{
+  "schema": "episode/1",
+  "slug": "013-daniel-martinez",
+  "number": 13,
+  "season": 1,
+  "sync": {
+    "title": "Who Captures the Value of AI?",
+    "rawTitle": "#13 - Daniel Martínez: Who Captures the Value of AI? | Leading in AI Podcast",
+    "publishedAt": "2026-11-02",
+    "youtubeId": "wW-aTnhe0Mg",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Daniel Martínez is a PhD candidate at Esade, where he researches how generative AI is reshaping knowledge-intensive professional services such as law and consulting. Before academia, he spent nearly two decades in consulting, audit, compliance and legal operations, including several years at EY, before leaving in 2021 to pursue research.\n\nIn this episode, Daniel explains who really captures the value AI creates inside professional firms, why knowledge alone is no longer a competitive advantage, and what the traditional pyramid model means for juniors entering the industry.\n\nTopics covered:\n- From computer engineering to IT audit, internal audit and consulting\n- Leaving a 20-year career for a PhD after the Executive MBA at Esade\n- What professional experience brings to research, and what to unlearn\n- Working with Esteve Almirall as his supervisor\n- Who captures the value of AI: the firm, the professional, the tech provider or the client\n- How AI turns low-capital firms into infrastructure-heavy businesses\n- Moving from delivering knowledge to helping clients implement it\n- The junior paradox: AI needs expert judgment, but cuts the roles that build it\n- Advice for graduates: develop criteria and learn to challenge AI\n- What comes next: physical and screenless AI\n\nTimestamps:\n00:00 Introduction\n00:34 From computer engineering to audit and consulting\n02:55 Leaving EY for a PhD\n04:57 What consulting brings to research, and what to unlearn\n08:03 Working with Esteve Almirall\n10:28 How AI is reshaping knowledge-intensive professional services\n13:10 Who captures the value AI creates?\n17:47 Studying the impact and the shift in business models\n21:33 Where professional firms can still add value\n24:24 Fewer juniors? The talent pipeline paradox\n28:49 Beyond the pyramid\n29:45 Advice for graduates entering consulting\n32:14 Where AI will surprise us: physical and screenless AI\n\nConnect with Daniel Martínez: https://www.linkedin.com/in/daniel-martinez-villegas\n\nAbout Leading in AI:\nWebsite: https://leadinginaipodcast.com/\nLeading in AI - LinkedIn: https://www.linkedin.com/showcase/leading-in-ai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/wW-aTnhe0Mg/maxresdefault.jpg",
+    "lastSyncedAt": "2026-11-12T15:45:59Z"
+  },
+  "editorial": {
+    "guests": [
+      "daniel-martinez"
+    ],
+    "topics": [],
+    "summary": "TODO",
+    "hook": "TODO",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}

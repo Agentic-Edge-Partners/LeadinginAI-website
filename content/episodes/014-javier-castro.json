@@ -1,0 +1,29 @@
+{
+  "schema": "episode/1",
+  "slug": "014-javier-castro",
+  "number": 14,
+  "season": 1,
+  "sync": {
+    "title": "The CEO’s Playbook for AI Transformation",
+    "rawTitle": "#14 - Javier Castro: The CEO’s Playbook for AI Transformation | Leading in AI Podcast",
+    "publishedAt": "2026-11-09",
+    "youtubeId": "m8l8dmcs5x8",
+    "spotifyEpisodeId": null,
+    "durationSeconds": null,
+    "youtubeDescription": "Javier Castro is an AI board advisor, AI engineer and board member with more than three decades of experience in telecoms and digital. He was a member of Telefónica Spain’s Executive Committee and CEO of Terra. As CEO of BeeDIGITAL AI, he turned Páginas Amarillas (Yellow Pages) into a digital company and then started its AI transformation before ChatGPT. Today he advises boards and CEOs on AI transformation, collaborates with Esade, and still builds AI systems himself.\n\nIn this episode, Javier shares his playbook for AI transformation: why the CEO must lead it, how his dnAI methodology moves companies from scattered use cases to real integration, and why he believes AI will promote knowledge workers rather than replace them.\n\nTopics covered:\n- From statistical learning at Telefónica in the 90s to AI transformation today\n- Turning Páginas Amarillas into a digital company, and then an AI company\n- What non-generative AI can still do: prediction, classification and optimization\n- Why AI transformation must be led by the CEO\n- The dnAI methodology: CEO vision, training, team, lighthouse cases, then the roadmap\n- “Electrification, not torches”: why scattered use cases fail\n- Rethinking ROI as return on intelligence\n- Training everyone, from the receptionist to the board\n- AI abundance: intelligence at everybody’s fingertips\n\nTimestamps:\n00:00 Introduction\n00:50 From Telefónica and Terra to AI\n02:54 Why an AI board advisor still builds AI systems\n05:16 Turning Páginas Amarillas into an AI company\n07:44 AI before ChatGPT: the power of non-generative AI\n09:13 Why the CEO must lead the transformation\n10:47 The dnAI methodology: electrification, not torches\n15:51 What leaders at the top should do differently\n18:56 How long does an AI transformation take?\n20:25 Why a clear methodology reduces friction\n22:25 The cultural challenge: train everyone\n23:41 What AI abundance means\n25:41 No job apocalypse: why AI will promote us\n29:18 Where AI will surprise us: AI, synthetic biology and quantum computing\n\nConnect with Javier Castro: https://www.linkedin.com/in/franciscojaviercastroperez/\n\nAbout Leading in AI:\nWebsite: https://leadinginaipodcast.com/\nLeading in AI - LinkedIn: https://www.linkedin.com/showcase/leading-in-ai/",
+    "thumbnailUrl": "https://i.ytimg.com/vi/m8l8dmcs5x8/maxresdefault.jpg",
+    "lastSyncedAt": "2026-11-12T15:45:59Z"
+  },
+  "editorial": {
+    "guests": [
+      "javier-castro"
+    ],
+    "topics": [],
+    "summary": "TODO",
+    "hook": "TODO",
+    "featured": false,
+    "chapters": [],
+    "quotes": [],
+    "links": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "guest/1",
+  "slug": "jeremie-benhamou",
+  "name": "Jérémie Benhamou",
+  "role": "TODO",
+  "company": null,
+  "companyUrl": null,
+  "industry": "TODO",
+  "location": null,
+  "bio": "TODO: two to three sentences, third person.",
+  "headshot": null,
+  "links": {
+    "linkedin": null,
+    "x": null,
+    "website": null
+  }
+}
